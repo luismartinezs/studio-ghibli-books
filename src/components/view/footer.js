@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
+import Header from './header';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 // library.add(faShoppingCart, faSearch) // adds an icon to lib
@@ -94,3 +95,5 @@ class BottomBar extends Component {
         );
     }
 }
+
+export default Footer;

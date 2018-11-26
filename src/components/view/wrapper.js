@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 // library.add(faPlay) // adds an icon to lib
 // <FontAwesomeIcon icon={faPlay} />
 import './styles.css';
-import './header';
-import './footer';
-import './home';
+import Header from './header';
+import Footer from './footer';
+import Home from './home';
 
 class Wrapper extends Component {
   render() {

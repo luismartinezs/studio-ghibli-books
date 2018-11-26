@@ -43,7 +43,7 @@ class LogoArea extends Component {
 
           <a id='logoAnchor' href="#">
             <div id='logo-container' class='d-flex align-center'>
-              <img id='logo-main' src='./images/one_ring.png' alt='One Ring Logo' />
+              <img id='logo-main' src={require('./images/one_ring.png')} alt='One Ring Logo' />
               <span id='tagline'><strong>B</strong>ag <strong>E</strong>nd<br /> <strong>B</strong>ooks</span>
             </div>
           </a>

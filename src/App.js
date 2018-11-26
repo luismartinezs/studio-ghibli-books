@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Wrapper } from './components/view/wrapper';
+import Wrapper from './components/view/wrapper';
 import './App.css';
 
 class App extends Component {

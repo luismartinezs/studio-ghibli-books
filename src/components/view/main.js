@@ -164,3 +164,5 @@ class Newsletter extends Component {
         );
     }
 }
+
+export default Main;
