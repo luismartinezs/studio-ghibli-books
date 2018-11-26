@@ -7,17 +7,31 @@ import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
 import Home from './home';
+import Detail from './detail';
 import './styles.css';
+
+const screen = 'detail'; // home, detail, checkout
 
 class Wrapper extends Component {
   render() {
-    return (
-      <div>
-        <Header />
-        <Home />
-        <Footer />
-      </div>
-    );
+    if (screen === 'home') {
+      return (
+        <div>
+          <Header />
+          <Home />
+          <Footer />
+        </div>
+      );
+    }
+    if (screen === 'detail') {
+      return (
+        <div>
+          <Header />
+          <Detail />
+          <Footer />
+        </div>
+      );
+    }
   }
 }
 
