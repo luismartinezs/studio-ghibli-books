@@ -12,6 +12,7 @@ class Header extends Component {
       <header>
         <TopBar />
         <LogoArea />
+        <Navbar />
       </header>
     );
   }
@@ -47,14 +48,22 @@ class LogoArea extends Component {
             </div>
           </a>
 
-          <div id='searchBar'>
-            <form>
-              <input id='searchInput' type='text' placeholder='Search by book, author, keyword...' />
-              <button id='searchBtn'><FontAwesomeIcon icon={faSearch} /></button>
-            </form>
-          </div>
+          <SearchBar />
 
         </div>
+      </div>
+    );
+  }
+}
+
+class SearchBar extends Component {
+  render() {
+    return (
+      <div id='searchBar'>
+        <form>
+          <input id='searchInput' type='text' placeholder='Search by book, author, keyword...' />
+          <button id='searchBtn'><FontAwesomeIcon icon={faSearch} /></button>
+        </form>
       </div>
     );
   }

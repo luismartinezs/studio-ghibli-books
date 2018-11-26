@@ -6,12 +6,16 @@ import React, { Component } from 'react';
 // <FontAwesomeIcon icon={faPlay} />
 import './styles.css';
 import './header';
+import './footer';
+import './home';
 
 class Wrapper extends Component {
   render() {
     return (
       <div>
-      <Header />
+        <Header />
+        <Home />
+        <Footer />
       </div>
     );
   }
