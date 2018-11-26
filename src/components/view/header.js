@@ -20,20 +20,14 @@ class Header extends Component {
 
 class TopBar extends Component {
   render() {
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    let myVar = '';
-    if (w < 700) { myVar = 'You can only see me in your phone'; }
-    console.log(w, h);
     return (
       <div id='topBar' className='d-flex align-center'>
         <div id='topBar-container' className='d-flex align-center justify-center'>
           <span id='contactInfo'>Bag End - Hobbiton - Call us: 555-555-555 - email: bilbobaggins@theshire.hob</span>
           <span id='topBar-buttons'>
-            {myVar}
-            <button>My account</button>
-            <button><FontAwesomeIcon icon={faShoppingCart} /></button>
-            <button><FontAwesomeIcon icon={faBars} /></button>
+            <button id='myAccountBtn'>My account</button>
+            <button id='cartBtn'><FontAwesomeIcon icon={faShoppingCart} /></button>
+            <button id='burguerMenuBtn'><FontAwesomeIcon icon={faBars} /></button>
           </span>
         </div>
       </div>
@@ -51,7 +45,7 @@ class LogoArea extends Component {
           <a id='logoAnchor' href="#">
             <div id='logo-container' className='d-flex align-center'>
               <img id='logo-main' src={require('./images/one_ring.png')} alt='One Ring Logo' />
-              <span id='tagline'><strong>B</strong>ag <strong>E</strong>nd<br /> <strong>B</strong>ooks</span>
+              <span id='tagline'><strong>B</strong>ag <strong>E</strong>nd <strong>B</strong>ooks</span>
             </div>
           </a>
 
