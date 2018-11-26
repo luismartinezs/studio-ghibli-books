@@ -1,0 +1,3 @@
+- adjust design to make it more mobile friendly, and add more white space
+- create ui for product detail page, imitate this: https://www.monogranofelicetti.it/en/
+- create checkout

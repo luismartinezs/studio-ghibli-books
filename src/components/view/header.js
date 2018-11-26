@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 library.add(faShoppingCart, faSearch) // adds an icon to lib
 // <FontAwesomeIcon icon={faPlay} />
 
@@ -27,6 +27,7 @@ class TopBar extends Component {
           <span id='topBar-buttons'>
             <button>My account</button>
             <button><FontAwesomeIcon icon={faShoppingCart} /></button>
+            {/* <button><FontAwesomeIcon icon={faBars} /></button> */}
           </span>
         </div>
       </div>

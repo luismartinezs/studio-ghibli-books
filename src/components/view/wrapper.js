@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 // import { faPlay } from '@fortawesome/free-solid-svg-icons'
 // library.add(faPlay) // adds an icon to lib
 // <FontAwesomeIcon icon={faPlay} />
-import './styles.css';
 import Header from './header';
 import Footer from './footer';
 import Home from './home';
+import './styles.css';
 
 class Wrapper extends Component {
   render() {

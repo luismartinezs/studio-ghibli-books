@@ -141,6 +141,12 @@ header {
     font-size: 0.9rem;
 }
 
+@media (max-width: 540px) {
+    #contactInfo {
+        display: none;
+    }
+}
+
 #topBar-buttons {
     justify-self: end;
     margin-left: auto;
