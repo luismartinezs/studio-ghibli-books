@@ -8,9 +8,10 @@ import Header from './header';
 import Footer from './footer';
 import Home from './home';
 import Detail from './detail';
+import Cart from './cart';
 import './styles.css';
 
-const screen = 'detail'; // home, detail, checkout
+const screen = 'cart'; // home, detail, cart
 
 class Wrapper extends Component {
   render() {
@@ -28,6 +29,15 @@ class Wrapper extends Component {
         <div>
           <Header />
           <Detail />
+          <Footer />
+        </div>
+      );
+    }
+    if (screen === 'cart') {
+      return (
+        <div>
+          <Header />
+          <Cart />
           <Footer />
         </div>
       );
