@@ -766,6 +766,17 @@ span#topBar-buttons button:hover {
     background-color: var(--secondary-dark);
 }
 
+@media screen and (min-width: 960px) {
+    #detailContainer {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #detailTxtContent {
+        margin-right: 2rem;
+    }
+}
+
 /* ICONS */
 
 #iconsReference {
