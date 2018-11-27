@@ -16,6 +16,12 @@ class Cart extends Component {
                     </div>
                     <div id='cartListContainer' className='w100'>
                         <ul id='cartList' className='d-flex d-col w100'>
+                            <li id='cartItemHead'>
+                            <span className='head-item'>Image</span>
+                            <span className='head-item'>Product Name</span>
+                            <span className='head-item'>Total</span>
+                            <span className='head-item'></span>
+                            </li>
                             <CartItem />
                             <CartItem />
                         </ul>

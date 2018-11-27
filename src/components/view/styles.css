@@ -854,10 +854,14 @@ span#topBar-buttons button:hover {
     margin-bottom: 0;
 }
 
-.cart-item-wrapper {
+.cart-item-wrapper , #cartItemHead {
     background-color: var(--primary-xlight);
-    margin-bottom: 1rem;
-    border-radius: 3px;
+    margin-bottom: 1px;
+    border-radius: 2px;
+}
+
+#cartItemHead {
+    display: none;
 }
 
 .cart-item-container {
@@ -920,6 +924,12 @@ span#topBar-buttons button:hover {
 
 #checkoutBtn {
     margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 960px) {
+    #cartItemHead {
+        display: initial;
+    }
 }
 
 /* ICONS */
