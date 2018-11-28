@@ -6,7 +6,7 @@ import Detail from './detail';
 import Cart from './cart';
 import './styles.css';
 
-const screen = 'home'; // home, detail, cart
+const screen = 'cart'; // home, detail, cart
 
 class Wrapper extends Component {
   render() {

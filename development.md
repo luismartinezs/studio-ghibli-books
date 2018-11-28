@@ -19,11 +19,23 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - Use fontawesome icons instead of the ones Im using for categories OK
     - use studio ghibli logo instead of ring OK
 
+- State:
+    - Add provider, wrapper and presentational in between App and Wrapper
+    - Add basic Redux infrastructure
+
 - Interaction:
     - When clicking on home icon, user goes to home page
     - When I click on cart, go to cart
     - When I click on product, go to detail
     - When click, on popular, go to popular section
+
+    - add collapsible menu in mobile view
+
+    - Get json object
+    - get dynamic website data from json
+
+    - Able to add items to cart
+    - Able to remove items from cart, and have price dynamically updated
 
 Maybe:
 - Separate search bar and logo into different components so that I don't need to always have one with the other
