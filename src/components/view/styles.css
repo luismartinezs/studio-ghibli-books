@@ -3,14 +3,14 @@
 :root {
     --font-h: 'Merriweather', serif;
     --font-p: 'Open Sans', sans-serif;
-    --primary: #558b2f;
-    --primary-light: #85bb5c;
-    --primary-xlight: #cae7b3;
-    --primary-dark: #255d00;
-    --secondary: #f57c00;
-    --secondary-light: #ffad42;
-    --secondary-xlight: #ffdaaa;
-    --secondary-dark: #bb4d00;
+    --primary: #0dad62;
+    --primary-light: #61c797;
+    --primary-xlight: #bdead5;
+    --primary-dark: #01582f;
+    --secondary: #f55000;
+    --secondary-light: #ff9664;
+    --secondary-xlight: #ffdccb;
+    --secondary-dark: #7d2900;
     --text-primary: #0e0e0e;
     --text-secondary: #0e0e0e;
     --alert: #E35C5C;
@@ -48,6 +48,7 @@ button {
     border: none;
     border-radius: 0.5em;
     padding: 0.2em 0.5em 0.2em 0.5em;
+    cursor: pointer;
 }
 
 ul {
@@ -289,7 +290,7 @@ span#topBar-buttons button:hover {
 #logo-main {
     max-width: 100%;
     height: auto;
-    width: 60px;
+    width: 30px;
     margin-right: 0.5rem;
 }
 
@@ -330,7 +331,7 @@ span#topBar-buttons button:hover {
     }
 
     #logo-main {
-        width: 60px;
+        width: 30px;
     }
 
     #logoAnchor {
@@ -542,7 +543,7 @@ span#topBar-buttons button:hover {
 #featured {
     width: 100%;
     height: 500px;
-    background-image: url("https://www.hobbitontours.com/media/1162/hobbiton-movie-set-18.jpg?center=0.44162436548223349,0.49833333333333335&mode=crop&width=800&heightratio=0.5628930817610063&rnd=131219724030000000");
+    background-image: url("./images/totoro-fields.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -847,6 +848,9 @@ span#topBar-buttons button:hover {
     #detailTxtContent {
         margin-right: 2rem;
     }
+    #detailImgWrapper {
+        margin-right: 1rem;
+    }
 }
 
 /* SHOPPING CART STYLES */
@@ -1071,6 +1075,13 @@ span#topBar-buttons button:hover {
 
 #iconsReference {
     font-size: 0.9rem;
+}
+
+.categoryIcon {
+    width: 128px;
+    height: 128px;
+    max-width: 256px;
+    max-height: 256px;
 }
 
 #swordIcon {

@@ -1,3 +1,5 @@
+API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API 
+
 - Create production branch
 - Create mobile-home branch
 
@@ -10,11 +12,12 @@
         - put each
 
 - Design retouch:
-    - Use generic empty image instead of real book cover
-    - Change main banner background image
-    - Change colors
-    - Change static texts
-    - Use fontawesome icons instead of the ones Im using for categories
+    - Use generic empty image instead of real book cover OK
+    - Change main banner background image OK
+    - Change colors OK
+    - Change static texts OK
+    - Use fontawesome icons instead of the ones Im using for categories OK
+    - use studio ghibli logo instead of ring OK
 
 - Interaction:
     - When clicking on home icon, user goes to home page

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
-// library.add(faShoppingCart, faSearch) // adds an icon to lib
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+library.add(faCheckCircle) // adds an icon to lib
 // <FontAwesomeIcon icon={faPlay} />
 
 
@@ -30,13 +30,13 @@ class Featured extends Component {
                     <div id='featuredContainer' className='d-flex align-center justify-center text-center'>
 
                         <div id='featuredBook-wrapper'>
-                            <img id='featuredBookThumbnail' src='https://images-na.ssl-images-amazon.com/images/I/51eq24cRtRL._SX331_BO1,204,203,200_.jpg'
+                            <img id='featuredBookThumbnail' src={require('./images/book_cover_template.jpg')}
                                 alt='lord of the rings 50th anniversary edition' />
                         </div>
 
                         <div id='featuredBox-container'>
-                            <h1>The Lord of the Rings</h1>
-                            <span>50th anniversary edition</span>
+                            <h1>My Neighbor Totoro</h1>
+                            <span>25th anniversary edition</span>
                             <button id='buyNowBtn'>Buy now</button>
                         </div>
 
@@ -50,7 +50,16 @@ class Featured extends Component {
 }
 
 class Popular extends Component {
+
     render() {
+
+        const itemList = [0,1,2,3,4].map( (elem) => {
+            return (<li className='boxes-list-item text-center' key={elem}>
+            <img src={require('./images/book_cover_template.jpg')} alt='My Neighbor Totoro' />
+            <p><a href='#'>My Neighbor Totoro</a></p>
+        </li>)
+        });
+
         return (
             <section id='popular' className='boxes-wrapper d-flex justify-center'>
 
@@ -59,30 +68,7 @@ class Popular extends Component {
                     <h2>Most popular</h2>
                     <ul id='popularList' className='boxes-list d-flex justify-center'>
 
-                        <li className='boxes-list-item text-center'>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/51uYlDqoIyL._AC_US218_.jpg' alt='The Hobbit' />
-                            <p><a href='#'>The Hobbit</a></p>
-                        </li>
-
-                        <li className='boxes-list-item text-center'>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/714PP8U4G4L._AC_SR201,266_.jpg' alt='The Fall of Gondolin' />
-                            <p><a href='#'>The Fall of Gondolin</a></p>
-                        </li>
-
-                        <li className='boxes-list-item text-center'>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/41953X1GWGL._AC_US218_.jpg' alt='Lord of the Rings deluxe' />
-                            <p><a href='#'>The Lord of the Rings Deluxe Edition</a></p>
-                        </li>
-
-                        <li className='boxes-list-item text-center'>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/41mro76Ot2L._AC_US218_.jpg' alt='The Children of Húrin' />
-                            <p><a href='#'>The Children of Húrin</a></p>
-                        </li>
-
-                        <li className='boxes-list-item text-center'>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/5186KTZNTyL._AC_US218_.jpg' alt='Beren and Lúthien' />
-                            <p><a href='#'>Beren and Lúthien</a></p>
-                        </li>
+                        {itemList}
 
                     </ul>
 
@@ -97,6 +83,14 @@ class Popular extends Component {
 
 class Categories extends Component {
     render() {
+
+        const categoryList = [0,1,2,3,4].map( (elem) => {
+            return (<li className='categories-list-item text-center d-flex d-col justify-center align-center'>
+            <div className='categoryIcon'><FontAwesomeIcon icon={faCheckCircle} size="7x" /></div>
+            <h3><a href='#'>Fantasy</a></h3>
+        </li>)
+        });
+
         return (
             <section id='categories' className='d-flex d-col align-center justify-center w100'>
 
@@ -105,30 +99,7 @@ class Categories extends Component {
                     <h2>Categories</h2>
                     <ul id='categoriesList' className='d-flex justify-center align-baseline w100'>
 
-                        <li className='categories-list-item text-center d-flex d-col justify-center align-center'>
-                            <div id='swordIcon'></div>
-                            <h3><a href='#'>Battles & Glory</a></h3>
-                        </li>
-
-                        <li className='categories-list-item text-center d-flex d-col justify-center align-center'>
-                            <div id='elfIcon'></div>
-                            <h3><a href='#'>Rivendell Poems</a></h3>
-                        </li>
-
-                        <li className='categories-list-item text-center d-flex d-col justify-center align-center'>
-                            <div id='firstAgeIcon'></div>
-                            <h3><a href='#'>First Age</a></h3>
-                        </li>
-
-                        <li className='categories-list-item text-center d-flex d-col justify-center align-center'>
-                            <div id='sauronIcon'></div>
-                            <h3><a href='#'>Dark Tales</a></h3>
-                        </li>
-
-                        <li className='categories-list-item text-center d-flex d-col justify-center align-center'>
-                            <div id='loreIcon'></div>
-                            <h3><a href='#'>Gondor Lore</a></h3>
-                        </li>
+                        {categoryList}
 
                     </ul>
 

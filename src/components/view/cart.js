@@ -73,7 +73,7 @@ class CartItem extends Component {
                                 <img className='cart-item-img' src='https://images-na.ssl-images-amazon.com/images/I/51uYlDqoIyL._AC_US218_.jpg' alt='The Hobbit' />
                             </div>
                             <div>
-                                <h3>The Hobbit</h3>
+                                <h3>My Neighbor Totoro</h3>
                                 <button className='btn delete-btn'><FontAwesomeIcon icon={faTrashAlt} /></button>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ class CartItem extends Component {
                         </div>
 
                         <div id='itemName'>
-                            <h3>The Hobbit</h3>
+                            <h3>My Neighbor Totoro</h3>
                         </div>
                         <div id='itemTotal'>
                             <span>19.90€</span>

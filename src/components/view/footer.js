@@ -20,6 +20,19 @@ class Footer extends Component {
 
 class MainWrapper extends Component {
     render() {
+
+        const linkList = ['Home', 'About', 'Popular', 'Deals', 'Blog', 'Contact'].map( (elem) => {
+            return (
+                <li key={elem}><a>{elem}</a></li>
+            );
+        });
+
+        const categoryList = ['Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy'].map( (elem) => {
+            return (
+                <li key={elem}><a>{elem}</a></li>
+            );
+        });
+
         return (
             <div id='footerMain-wrapper' className='d-flex justify-center align-center w100'>
 
@@ -30,12 +43,7 @@ class MainWrapper extends Component {
                         <h3>Links</h3>
 
                         <ul>
-                            <li><a>Home</a></li>
-                            <li><a>About</a></li>
-                            <li><a>Popular</a></li>
-                            <li><a>Best deals</a></li>
-                            <li><a>Blog</a></li>
-                            <li><a>Content</a></li>
+                            {linkList}
                         </ul>
 
                     </div>
@@ -45,11 +53,7 @@ class MainWrapper extends Component {
                         <h3>Categories</h3>
 
                         <ul>
-                            <li><a>Battles & Glory</a></li>
-                            <li><a>Rivendell Poems</a></li>
-                            <li><a>First Age</a></li>
-                            <li><a>Dark Tales</a></li>
-                            <li><a>Gondor Lore</a></li>
+                            {categoryList}
                         </ul>
 
                     </div>
@@ -59,11 +63,11 @@ class MainWrapper extends Component {
                         <h3>Contact</h3>
 
                         <ul>
-                            <li>Bilbo Baggins</li>
-                            <li>Bag End, Hobbiton</li>
-                            <li>The Shire, Middle Earth</li>
+                            <li>Studio Ghibli</li>
+                            <li>Address</li>
+                            <li>City, country</li>
                             <li>(555)-555-555</li>
-                            <li><a href='mailto:bilbobaggins@theshire.hob'> bilbobaggins@theshire.hob</a></li>
+                            <li><a href='mailto:username@gmail.com'> username@gmail.com</a></li>
                         </ul>
                         <div id='footerSocialMediaIcons' className='d-flex'>
                             <a href='#'><i className="fab fa-facebook fa-2x"></i></a>
@@ -88,7 +92,7 @@ class BottomBar extends Component {
             <div id='bottomBar-wrapper' className=' d-flex justify-center align-center w100 text-center'>
 
                 <div id='bottomBar-container'>
-                    <span id='bottomBarMsg'>Made with plain HTML & CSS3 by Luis Martinez, 2018</span>
+                    <span id='bottomBarMsg'>Made with React by Luis Martinez, 2018</span>
                 </div>
 
             </div>

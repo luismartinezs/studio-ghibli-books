@@ -6,19 +6,19 @@ class Detail extends Component {
             <div id='detailWrapper w-100'>
                 <div id='detailContainer' className='d-flex d-col justify-center align-center w-100'>
                     <div id='detailImgWrapper'>
-                        <img src='https://images-na.ssl-images-amazon.com/images/I/51uYlDqoIyL._AC_US218_.jpg' alt='The Hobbit' />
+                        <img src={require('./images/book_cover_template.jpg')} alt='The Hobbit' />
                     </div>
                     <div id='detailTxtContent'>
                         <div id='detailTxtMain'>
-                            <h2>The Hobbit</h2>
-                            <p id='detailTxtDescription'>A true icon of popular cuisine, especially when paired with a classic Italian meat sauce. Matt durum wheat adds a lively and a firm texture that can capture even the most reluctant palate.</p>
+                            <h2>My Neighbor Totoro</h2>
+                            <p id='detailTxtDescription'>Two sisters move to the country with their father in order to be closer to their hospitalized mother, and discover the surrounding trees are inhabited by Totoros, magical spirits of the forest. When the youngest runs away from home, the older sister seeks help from the spirits to find her.</p>
                         </div>
                         <div id='detailTxtExtra'>
                             <div>
                                 <span className='key'>Director:</span> <span>Hayao Miyazaki</span>
                             </div>
                             <div>
-                                <span className='key'>Producer:</span> <span>Isao Takahata</span>
+                                <span className='key'>Producer:</span> <span>Hayao Miyazaki</span>
                             </div>
                             <div>
                                 <span className='key'>Year:</span> <span>1986</span>

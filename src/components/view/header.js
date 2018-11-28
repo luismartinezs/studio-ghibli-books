@@ -23,7 +23,7 @@ class TopBar extends Component {
     return (
       <div id='topBar' className='d-flex align-center'>
         <div id='topBar-container' className='d-flex align-center justify-center'>
-          <span id='contactInfo'>Bag End - Hobbiton - Call us: 555-555-555 - email: bilbobaggins@theshire.hob</span>
+          <span id='contactInfo'>Street - City - Call us: 555-555-555 - email: username@gmail.com</span>
           <span id='topBar-buttons'>
             <button id='myAccountBtn'>My account</button>
             <button id='cartBtn'><FontAwesomeIcon icon={faShoppingCart} /></button>
@@ -44,8 +44,8 @@ class LogoArea extends Component {
 
           <a id='logoAnchor' href="#">
             <div id='logo-container' className='d-flex align-center'>
-              <img id='logo-main' src={require('./images/one_ring.png')} alt='One Ring Logo' />
-              <span id='tagline'><strong>B</strong>ag <strong>E</strong>nd <strong>B</strong>ooks</span>
+              <img id='logo-main' src='http://www.ghibli.jp/img/home.png' alt='Logo' />
+              <span id='tagline'><strong>B</strong>ook <strong>S</strong>tore</span>
             </div>
           </a>
 
@@ -72,30 +72,19 @@ class SearchBar extends Component {
 
 class Navbar extends Component {
   render() {
+
+    const menuList = ['Home', 'About', 'Popular', 'Deals', 'Categories', 'Blog', 'Contact'].map((elem) => {
+      return (
+        <li className='navList-item d-flex align-center justify-center'>
+          <a className='nav-link'>{elem}</a>
+        </li>
+      );
+    })
+
     return (
       <nav id='mainNav' className='d-flex align-center justify-center'>
         <ul id='navList' className='d-flex'>
-          <li className='navList-item d-flex align-center justify-center'>
-            <a className='nav-link'>Home</a>
-          </li>
-          <li className='navList-item d-flex align-center justify-center'>
-            <a className='nav-link'>About</a>
-          </li>
-          <li className='navList-item d-flex align-center justify-center'>
-            <a className='nav-link'>Popular</a>
-          </li>
-          <li className='navList-item d-flex align-center justify-center'>
-            <a className='nav-link'>Best deals</a>
-          </li>
-          <li className='navList-item d-flex align-center justify-center'>
-            <a className='nav-link'>Categories</a>
-          </li>
-          <li className='navList-item d-flex align-center justify-center'>
-            <a className='nav-link'>Blog</a>
-          </li>
-          <li className='navList-item d-flex align-center justify-center' id='contactBtn'>
-            <a className='nav-link'>Contact</a>
-          </li>
+          {menuList}
         </ul>
       </nav>
 
