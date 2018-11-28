@@ -21,6 +21,9 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 
 - Interaction:
     - When clicking on home icon, user goes to home page
+    - When I click on cart, go to cart
+    - When I click on product, go to detail
+    - When click, on popular, go to popular section
 
 Maybe:
 - Separate search bar and logo into different components so that I don't need to always have one with the other
