@@ -9,5 +9,15 @@
         - format header row
         - put each
 
+- Design retouch:
+    - Use generic empty image instead of real book cover
+    - Change main banner background image
+    - Change colors
+    - Change static texts
+    - Use fontawesome icons instead of the ones Im using for categories
+
+- Interaction:
+    - When clicking on home icon, user goes to home page
+
 Maybe:
 - Separate search bar and logo into different components so that I don't need to always have one with the other
