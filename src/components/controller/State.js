@@ -6,17 +6,43 @@ import Wrapper from '../view/wrapper';
 // REDUX
 // action
 const SHOW_HOME = 'SHOW_HOME';
+const SHOW_DETAIL = 'SHOW_DETAIL';
+const SHOW_CART = 'SHOW_CART';
+
+const screens = {
+    HOME: "HOME",
+    DETAIL: "DETAIL",
+    CART: "CART",
+}
 
 // initialize state
 const initialState = {
-    currentScreen: 'home',
+    currentScreen: screens.HOME,
 };
 
 // action creator
-const showHome = () => {
-    return {
-        type: SHOW_HOME,
-        screen: 'home',
+const showScreen = (screen) => {
+    switch (screen) {
+        case screens.HOME:
+            return {
+                type: SHOW_HOME,
+                currentScreen: screens.HOME,
+            };
+        case screens.DETAIL:
+            return {
+                type: SHOW_DETAIL,
+                currentScreen: screens.DETAIL,
+            };
+        case screens.CART:
+            return {
+                type: SHOW_CART,
+                currentScreen: screens.CART,
+            };
+        default:
+            return {
+                type: SHOW_HOME,
+                currentScreen: screens.HOME,
+            };
     }
 }
 
@@ -24,6 +50,10 @@ const showHome = () => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SHOW_HOME:
+            return Object.assign({}, state, action.currentScreen);
+        case SHOW_DETAIL:
+            return Object.assign({}, state, action.currentScreen);
+        case SHOW_CART:
             return Object.assign({}, state, action.currentScreen);
         default:
             return state;
@@ -36,43 +66,32 @@ const store = createStore(reducer);
 class Presentational extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            currentScreen: 'home',
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleChange(e) {
-        this.setState({
-            currentScreen: 'home',
-        });
-    }
-    handleSubmit() {
-        this.props.showHome(this.state.currentScreen);
-        this.setState({
-            something: '',
-        });
-    }
+
     render() {
         return (
             <div>
-                <Wrapper />
+                <Wrapper currentScreen={this.props.currentScreen} />
             </div>
         );
     }
 }
 
+function getCurrentScreen(state) {
+    return state.currentScreen;
+}
+
 // REACT-REDUX
 function mapStateToProps(state) {
     return {
-        message: state
+        currentScreen: getCurrentScreen(state),
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        showHome: function (message) {
-            return (dispatch(showHome(message)));
+        showScreen: function (screen) {
+            return (dispatch(showScreen(screen)));
         }
     };
 }

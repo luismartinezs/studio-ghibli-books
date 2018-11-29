@@ -26,7 +26,7 @@ class TopBar extends Component {
           <span id='contactInfo'>Street - City - Call us: 555-555-555 - email: username@gmail.com</span>
           <span id='topBar-buttons'>
             <button id='myAccountBtn'>My account</button>
-            <button id='cartBtn'><FontAwesomeIcon icon={faShoppingCart} /></button>
+            <button id='cartBtn'><FontAwesomeIcon icon={faShoppingCart}/></button>
             <button id='burguerMenuBtn'><FontAwesomeIcon icon={faBars} /></button>
           </span>
         </div>
@@ -42,9 +42,9 @@ class LogoArea extends Component {
 
         <div id='logoArea-container' className='d-flex align-center'>
 
-          <a id='logoAnchor' href="#">
+          <a id='logoAnchor'>
             <div id='logo-container' className='d-flex align-center'>
-              <img id='logo-main' src='http://www.ghibli.jp/img/home.png' alt='Logo' />
+              <img id='logo-main' src='http://www.ghibli.jp/img/home.png' alt='Logo'/>
               <span id='tagline'><strong>B</strong>ook <strong>S</strong>tore</span>
             </div>
           </a>

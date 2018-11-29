@@ -6,11 +6,12 @@ import Detail from './detail';
 import Cart from './cart';
 import './styles.css';
 
-const screen = 'home'; // home, detail, cart
-
 class Wrapper extends Component {
   render() {
-    if (screen === 'home') {
+
+    const screen = this.props.currentScreen;
+
+    if (screen === 'HOME') {
       return (
         <div>
           <Header />
@@ -19,7 +20,7 @@ class Wrapper extends Component {
         </div>
       );
     }
-    if (screen === 'detail') {
+    if (screen === 'DETAIL') {
       return (
         <div>
           <Header />
@@ -28,7 +29,7 @@ class Wrapper extends Component {
         </div>
       );
     }
-    if (screen === 'cart') {
+    if (screen === 'CART') {
       return (
         <div>
           <Header />

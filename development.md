@@ -21,7 +21,7 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 
 - State:
     - Add provider, wrapper and presentational in between App and Wrapper OK
-    - Add basic Redux infrastructure
+    - Add basic Redux infrastructure OK
 
 - Interaction:
     - When clicking on home icon, user goes to home page
@@ -36,6 +36,10 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 
     - Able to add items to cart
     - Able to remove items from cart, and have price dynamically updated
+
+- Structure:
+    - Convert stateless components to functions
+    - Add propTypes method to each stateless functional component that defines what the prop types must be
 
 Maybe:
 - Separate search bar and logo into different components so that I don't need to always have one with the other
