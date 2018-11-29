@@ -14,11 +14,12 @@ const screens = {
     HOME: "HOME",
     DETAIL: "DETAIL",
     CART: "CART",
+    MOBILE_MENU: "MOBILE_MENU",
 }
 
 // initialize state
 const initialState = {
-    currentScreen: screens.HOME,
+    currentScreen: screens.MOBILE_MENU,
 };
 
 // action creator

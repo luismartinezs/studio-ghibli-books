@@ -30,6 +30,9 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - If I click in home / detail / cart, I should always land in the top of the page OK
 
     - add collapsible menu in mobile view
+        - Design and code the static version OK
+        - toggle it when clicking hamburguer / X button
+        - have buttons go to corresponding page
 
     - Get json object
     - get dynamic website data from json

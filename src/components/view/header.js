@@ -89,7 +89,7 @@ class Navbar extends Component {
           <button className='nav-link anchor-btn'>{elem}</button>
         </li>
       );
-    })
+    });
 
     return (
       <nav id='mainNav' className='d-flex align-center justify-center'>
