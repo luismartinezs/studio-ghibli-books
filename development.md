@@ -24,9 +24,10 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - Add basic Redux infrastructure OK
 
 - Interaction:
-    - When clicking on home icon, user goes to home page
-    - When I click on cart, go to cart
-    - When I click on product, go to detail
+    - When clicking on home icon, user goes to home page OK
+    - When I click on cart, go to cart OK
+    - When I click on product, go to detail OK
+    - If I click in home / detail / cart, I should always land in the top of the page
     - When click, on popular, go to popular section
 
     - add collapsible menu in mobile view

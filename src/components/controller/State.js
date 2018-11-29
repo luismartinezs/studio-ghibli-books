@@ -22,6 +22,7 @@ const initialState = {
 
 // action creator
 const showScreen = (screen) => {
+    console.log("Function showScreen called");
     switch (screen) {
         case screens.HOME:
             return {
@@ -29,6 +30,7 @@ const showScreen = (screen) => {
                 currentScreen: screens.HOME,
             };
         case screens.DETAIL:
+
             return {
                 type: SHOW_DETAIL,
                 currentScreen: screens.DETAIL,
@@ -48,13 +50,24 @@ const showScreen = (screen) => {
 
 // reducer
 const reducer = (state = initialState, action) => {
+    console.log("state:",state);
+    let newState = {};
     switch (action.type) {
         case SHOW_HOME:
-            return Object.assign({}, state, action.currentScreen);
+            console.log("currentScreen switched to HOME");
+            newState = Object.assign({}, state, {currentScreen: action.currentScreen});
+            console.log("new state:", newState);
+            return newState;
         case SHOW_DETAIL:
-            return Object.assign({}, state, action.currentScreen);
+            console.log("currentScreen switched to DETAIL");
+            newState = Object.assign({}, state, {currentScreen: action.currentScreen});
+            console.log("new state:", newState);
+            return newState;
         case SHOW_CART:
-            return Object.assign({}, state, action.currentScreen);
+            console.log("currentScreen switched to CART");
+            newState = Object.assign({}, state, {currentScreen: action.currentScreen});
+            console.log("new state:", newState);
+            return newState;
         default:
             return state;
     };
@@ -71,7 +84,7 @@ class Presentational extends Component {
     render() {
         return (
             <div>
-                <Wrapper currentScreen={this.props.currentScreen} />
+                <Wrapper props={this.props} />
             </div>
         );
     }
@@ -88,13 +101,9 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        showScreen: function (screen) {
-            return (dispatch(showScreen(screen)));
-        }
-    };
-}
+const mapDispatchToProps = dispatch => ({
+    showScreen: screen => dispatch(showScreen(screen)),
+})
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 

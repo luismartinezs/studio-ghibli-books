@@ -9,36 +9,18 @@ import './styles.css';
 class Wrapper extends Component {
   render() {
 
-    const screen = this.props.currentScreen;
+    const props = this.props.props;
+    const screen = props.currentScreen;
+    console.log("Wrapper props:",props);
 
-    if (screen === 'HOME') {
       return (
         <div>
-          <Header />
-          <Home />
-          <Footer />
-        </div>
-      );
-    }
-    if (screen === 'DETAIL') {
-      return (
-        <div>
-          <Header />
-          <Detail />
-          <Footer />
-        </div>
-      );
-    }
-    if (screen === 'CART') {
-      return (
-        <div>
-          <Header />
-          <Cart />
-          <Footer />
+          <Header props={props}/>
+          {screen === "HOME" ? <Home props={props}/> : screen === "CART" ? <Cart /> : <Detail props={props}/>}
+          <Footer props={props}/>
         </div>
       );
     }
   }
-}
 
 export default Wrapper;

@@ -8,12 +8,14 @@ library.add(faCheckCircle) // adds an icon to lib
 
 class Home extends Component {
     render() {
+        const props = this.props.props;
+
         return (
             <main>
-                <Featured />
-                <Popular />
-                <Categories />
-                <Popular />
+                <Featured props={props}/>
+                <Popular props={props}/>
+                <Categories props={props}/>
+                <Popular props={props}/>
                 <Newsletter />
             </main>
         );
@@ -22,6 +24,8 @@ class Home extends Component {
 
 class Featured extends Component {
     render() {
+        const props = this.props.props;
+
         return (
             <section id='featured'>
 
@@ -37,7 +41,7 @@ class Featured extends Component {
                         <div id='featuredBox-container'>
                             <h1>My Neighbor Totoro</h1>
                             <span>25th anniversary edition</span>
-                            <button id='buyNowBtn'>Buy now</button>
+                            <button id='buyNowBtn' onClick={() => props.showScreen("DETAIL")}>Buy now</button>
                         </div>
 
                     </div>
@@ -52,11 +56,12 @@ class Featured extends Component {
 class Popular extends Component {
 
     render() {
+        const props = this.props.props;
 
         const itemList = [0,1,2,3,4].map( (elem) => {
-            return (<li className='boxes-list-item text-center' key={elem}>
+            return (<li className='boxes-list-item text-center' key={elem} onClick={() => props.showScreen("DETAIL")}>
             <img src={require('./images/book_cover_template.jpg')} alt='My Neighbor Totoro' />
-            <p><a href='#'>My Neighbor Totoro</a></p>
+            <p><button className='anchor-btn'>My Neighbor Totoro</button></p>
         </li>)
         });
 
@@ -83,11 +88,12 @@ class Popular extends Component {
 
 class Categories extends Component {
     render() {
+        const props = this.props.props;
 
         const categoryList = [0,1,2,3,4].map( (elem) => {
-            return (<li className='categories-list-item text-center d-flex d-col justify-center align-center'>
+            return (<li className='categories-list-item text-center d-flex d-col justify-center align-center' key={elem}>
             <div className='categoryIcon'><FontAwesomeIcon icon={faCheckCircle} size="7x" /></div>
-            <h3><a href='#'>Fantasy</a></h3>
+            <h3><button className="anchor-btn">Fantasy</button></h3>
         </li>)
         });
 

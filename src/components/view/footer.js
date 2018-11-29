@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import Header from './header';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 // library.add(faShoppingCart, faSearch) // adds an icon to lib
@@ -9,9 +7,11 @@ import Header from './header';
 
 class Footer extends Component {
     render() {
+        const props = this.props.props;
+
         return (
             <footer>
-                <MainWrapper />
+                <MainWrapper props={props}/>
                 <BottomBar />
             </footer>
         );
@@ -20,16 +20,17 @@ class Footer extends Component {
 
 class MainWrapper extends Component {
     render() {
+        const props = this.props.props;
 
         const linkList = ['Home', 'About', 'Popular', 'Deals', 'Blog', 'Contact'].map( (elem) => {
             return (
-                <li key={elem}><a>{elem}</a></li>
+                <li key={elem}><button className="anchor-btn" onClick={() => props.showScreen("HOME")}>{elem}</button></li>
             );
         });
 
-        const categoryList = ['Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy'].map( (elem) => {
+        const categoryList = ['Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy'].map( (elem, index) => {
             return (
-                <li key={elem}><a>{elem}</a></li>
+                <li key={index}><button className="anchor-btn">{elem}</button></li>
             );
         });
 
@@ -70,10 +71,10 @@ class MainWrapper extends Component {
                             <li><a href='mailto:username@gmail.com'> username@gmail.com</a></li>
                         </ul>
                         <div id='footerSocialMediaIcons' className='d-flex'>
-                            <a href='#'><i className="fab fa-facebook fa-2x"></i></a>
-                            <a href='#'><i className="fab fa-twitter-square fa-2x"></i></a>
-                            <a href='#'><i className="fab fa-youtube-square fa-2x"></i></a>
-                            <a href='#'><i className="fab fa-amazon fa-2x"></i></a>
+                            <button className="anchor-btn"><i className="fab fa-facebook fa-2x"></i></button>
+                            <button className="anchor-btn"><i className="fab fa-twitter-square fa-2x"></i></button>
+                            <button className="anchor-btn"><i className="fab fa-youtube-square fa-2x"></i></button>
+                            <button className="anchor-btn"><i className="fab fa-amazon fa-2x"></i></button>
                         </div>
 
                     </div>

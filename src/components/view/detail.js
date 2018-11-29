@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class Detail extends Component {
     render() {
+        const props = this.props.props;
+
         return (
             <div id='detailWrapper w-100'>
                 <div id='detailContainer' className='d-flex d-col justify-center align-center w-100'>
@@ -31,7 +33,7 @@ class Detail extends Component {
                             <span id='price'>€19.90</span>
                         </div>
                         <div>
-                            <button id='detailBuyBtn'>Buy Now</button>
+                            <button id='detailBuyBtn' onClick={() => props.showScreen("CART")}>Buy Now</button>
                         </div>
                     </div>
                 </div>
