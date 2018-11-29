@@ -20,7 +20,7 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - use studio ghibli logo instead of ring OK
 
 - State:
-    - Add provider, wrapper and presentational in between App and Wrapper
+    - Add provider, wrapper and presentational in between App and Wrapper OK
     - Add basic Redux infrastructure
 
 - Interaction:

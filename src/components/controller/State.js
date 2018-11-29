@@ -9,7 +9,7 @@ const SHOW_HOME = 'SHOW_HOME';
 
 // initialize state
 const initialState = {
-    screen: 'home',
+    currentScreen: 'home',
 };
 
 // action creator
@@ -24,7 +24,7 @@ const showHome = () => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SHOW_HOME:
-            return Object.assign({}, state, action.screen);
+            return Object.assign({}, state, action.currentScreen);
         default:
             return state;
     };
@@ -37,18 +37,18 @@ class Presentational extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            screen: 'home',
+            currentScreen: 'home',
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(e) {
         this.setState({
-            screen: 'home',
+            currentScreen: 'home',
         });
     }
     handleSubmit() {
-        this.props.showHome(this.state.screen);
+        this.props.showHome(this.state.currentScreen);
         this.setState({
             something: '',
         });
