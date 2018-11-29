@@ -68,8 +68,9 @@ class LogoArea extends Component {
 
 class SearchBar extends Component {
   render() {
+
     return (
-      <div id='searchBar'>
+      <div id='searchBar' onSubmit={(e) => {e.preventDefault()}}>
         <form>
           <input id='searchInput' type='text' placeholder='Search by book, author, keyword...' />
           <button id='searchBtn'><FontAwesomeIcon icon={faSearch} /></button>

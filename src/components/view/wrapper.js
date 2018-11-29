@@ -14,7 +14,7 @@ class Wrapper extends Component {
     console.log("Wrapper props:",props);
 
       return (
-        <div>
+        <div id="wrapper">
           <Header props={props}/>
           {screen === "HOME" ? <Home props={props}/> : screen === "CART" ? <Cart /> : <Detail props={props}/>}
           <Footer props={props}/>

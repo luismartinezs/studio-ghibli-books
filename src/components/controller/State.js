@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux'
 import Wrapper from '../view/wrapper';
@@ -50,22 +51,22 @@ const showScreen = (screen) => {
 
 // reducer
 const reducer = (state = initialState, action) => {
-    console.log("state:",state);
+    console.log("state:", state);
     let newState = {};
     switch (action.type) {
         case SHOW_HOME:
             console.log("currentScreen switched to HOME");
-            newState = Object.assign({}, state, {currentScreen: action.currentScreen});
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen });
             console.log("new state:", newState);
             return newState;
         case SHOW_DETAIL:
             console.log("currentScreen switched to DETAIL");
-            newState = Object.assign({}, state, {currentScreen: action.currentScreen});
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen });
             console.log("new state:", newState);
             return newState;
         case SHOW_CART:
             console.log("currentScreen switched to CART");
-            newState = Object.assign({}, state, {currentScreen: action.currentScreen});
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen });
             console.log("new state:", newState);
             return newState;
         default:
@@ -81,9 +82,17 @@ class Presentational extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
+    componentDidUpdate() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
-            <div>
+            <div id="presentational">
                 <Wrapper props={this.props} />
             </div>
         );

@@ -27,8 +27,7 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - When clicking on home icon, user goes to home page OK
     - When I click on cart, go to cart OK
     - When I click on product, go to detail OK
-    - If I click in home / detail / cart, I should always land in the top of the page
-    - When click, on popular, go to popular section
+    - If I click in home / detail / cart, I should always land in the top of the page OK
 
     - add collapsible menu in mobile view
 
@@ -43,4 +42,5 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - Add propTypes method to each stateless functional component that defines what the prop types must be
 
 Maybe:
+- When click, on popular, go to popular section: https://codepen.io/takatama/pen/mVvbqx
 - Separate search bar and logo into different components so that I don't need to always have one with the other
