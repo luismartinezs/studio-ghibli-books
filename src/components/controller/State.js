@@ -9,6 +9,8 @@ import Wrapper from '../view/wrapper';
 const SHOW_HOME = 'SHOW_HOME';
 const SHOW_DETAIL = 'SHOW_DETAIL';
 const SHOW_CART = 'SHOW_CART';
+const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
+const CLOSE_MENU = 'CLOSE_MENU';
 
 const screens = {
     HOME: "HOME",
@@ -19,12 +21,13 @@ const screens = {
 
 // initialize state
 const initialState = {
-    currentScreen: screens.MOBILE_MENU,
+    currentScreen: screens.HOME,
+    prevScreen: '',
 };
 
 // action creator
 const showScreen = (screen) => {
-    console.log("Function showScreen called");
+    console.log("Action creator showScreen called");
     switch (screen) {
         case screens.HOME:
             return {
@@ -32,7 +35,6 @@ const showScreen = (screen) => {
                 currentScreen: screens.HOME,
             };
         case screens.DETAIL:
-
             return {
                 type: SHOW_DETAIL,
                 currentScreen: screens.DETAIL,
@@ -42,6 +44,11 @@ const showScreen = (screen) => {
                 type: SHOW_CART,
                 currentScreen: screens.CART,
             };
+        case screens.MOBILE_MENU:
+            return {
+                type: SHOW_MOBILE_MENU,
+                currentScreen: screens.MOBILE_MENU,
+            }
         default:
             return {
                 type: SHOW_HOME,
@@ -50,29 +57,47 @@ const showScreen = (screen) => {
     }
 }
 
+const closeMenu = () => {
+    console.log("closeMenu called");
+    return {
+        type: CLOSE_MENU,
+    }
+}
+
 // reducer
 const reducer = (state = initialState, action) => {
     console.log("state:", state);
     let newState = {};
+    let prevScreen = state.currentScreen;
     switch (action.type) {
         case SHOW_HOME:
             console.log("currentScreen switched to HOME");
-            newState = Object.assign({}, state, { currentScreen: action.currentScreen });
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
             console.log("new state:", newState);
             return newState;
         case SHOW_DETAIL:
             console.log("currentScreen switched to DETAIL");
-            newState = Object.assign({}, state, { currentScreen: action.currentScreen });
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
             console.log("new state:", newState);
             return newState;
         case SHOW_CART:
             console.log("currentScreen switched to CART");
-            newState = Object.assign({}, state, { currentScreen: action.currentScreen });
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
+            console.log("new state:", newState);
+            return newState;
+        case SHOW_MOBILE_MENU:
+            console.log("currentScreen switched to MOBILE MENU");
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
+            console.log("new state:", newState);
+            return newState;
+        case CLOSE_MENU:
+            console.log("currentScreen switched to MOBILE MENU");
+            newState = Object.assign({}, state, { currentScreen: state.prevScreen, prevScreen: prevScreen });
             console.log("new state:", newState);
             return newState;
         default:
             return state;
-    };
+    }
 }
 
 const store = createStore(reducer);
@@ -113,7 +138,8 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => ({
     showScreen: screen => dispatch(showScreen(screen)),
-})
+    closeMenu: () => dispatch(closeMenu()),
+});
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 

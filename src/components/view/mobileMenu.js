@@ -11,10 +11,33 @@ class MobileMenu extends Component {
         const props = this.props.props;
         console.log("MobileMenu props:", props);
 
-        const menuList = ['Home', 'About', 'Popular', 'Deals', 'Categories', 'Blog', 'Contact'].map((elem) => {
+        const menuList = [
+            {
+                name: 'Home',
+                method: () => props.showScreen("HOME")
+            }, {
+                name: 'About',
+                method: () => false
+            }, {
+                name: 'Popular',
+                method: () => false
+            }, {
+                name: 'Deals',
+                method: () => false
+            }, {
+                name: 'Categories',
+                method: () => false
+            }, {
+                name: 'Blog',
+                method: () => false
+            }, {
+                name: 'Contact',
+                method: () => false
+            },
+        ].map((elem) => {
             return (
-                <li key={elem}>
-                    <button className="anchor-btn">{elem}</button>
+                <li key={elem.name}>
+                    <button className="anchor-btn" onClick={elem.method}>{elem.name}</button>
                 </li>
             );
         })
@@ -22,13 +45,13 @@ class MobileMenu extends Component {
         return (
             <div id='mobileMenuWrapper' className="h100">
                 <div id='mobileMenuContainer' className="d-flex d-col">
-                    <button id="closeBtn" className="d-block">
+                    <button id="closeBtn" className="d-block" onClick={() => props.closeMenu()}>
                         <FontAwesomeIcon icon={faTimesCircle} />
                     </button>
                     <div id="menuListWrapper">
                         <ul id="menuList" className="d-flex d-col justify-center align-center text-center">
                             {menuList}
-                            <li id="myAccount">My Account</li>
+                            <li id="myAccount"><button id="menuListAccountBtn" className="anchor-btn">My Account</button></li>
                         </ul>
                     </div>
                 </div>

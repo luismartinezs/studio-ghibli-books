@@ -16,7 +16,7 @@ class Wrapper extends Component {
 
     if ( screen === "MOBILE_MENU" ) {
       return (
-        <MobileMenu />
+        <MobileMenu props={props} />
       );
     }
 

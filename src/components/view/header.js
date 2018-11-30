@@ -33,7 +33,7 @@ class TopBar extends Component {
           <span id='topBar-buttons'>
             <button id='myAccountBtn'>My account</button>
             <button id='cartBtn' onClick={() => props.showScreen("CART")}><FontAwesomeIcon icon={faShoppingCart}/></button>
-            <button id='burguerMenuBtn'><FontAwesomeIcon icon={faBars} /></button>
+            <button id='burguerMenuBtn' onClick={() => props.showScreen("MOBILE_MENU")}><FontAwesomeIcon icon={faBars} /></button>
           </span>
         </div>
       </div>
