@@ -11,19 +11,31 @@ const SHOW_HOME = 'SHOW_HOME';
 const SHOW_DETAIL = 'SHOW_DETAIL';
 const SHOW_CART = 'SHOW_CART';
 const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
+const SHOW_ERROR = 'SHOW_ERROR';
 const CLOSE_MENU = 'CLOSE_MENU';
+const GET_MOVIES = 'GET_MOVIES';
+const DID_LOAD = 'DID_LOAD';
+const SET_INDEX = 'SET_INDEX';
+const ADD_TO_CART = 'ADD_TO_CART';
+const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
 const screens = {
     HOME: "HOME",
     DETAIL: "DETAIL",
     CART: "CART",
     MOBILE_MENU: "MOBILE_MENU",
+    ERROR: "ERROR",
+    LOADING: "LOADING",
 }
 
 // initialize state
 const initialState = {
-    currentScreen: screens.HOME,
+    currentScreen: screens.LOADING,
     prevScreen: '',
+    movies: [],
+    isLoading: true,
+    currentDetailIndex: 0,
+    cart: [],
 };
 
 // action creator
@@ -50,6 +62,16 @@ const showScreen = (screen) => {
                 type: SHOW_MOBILE_MENU,
                 currentScreen: screens.MOBILE_MENU,
             }
+        case screens.LOADING:
+            return {
+                type: DID_LOAD,
+                currentScreen: screens.LOADING,
+            }
+        case screens.ERROR:
+            return {
+                type: SHOW_ERROR,
+                currentScreen: screens.ERROR,
+            }
         default:
             return {
                 type: SHOW_HOME,
@@ -62,6 +84,41 @@ const closeMenu = () => {
     console.log("closeMenu called");
     return {
         type: CLOSE_MENU,
+    }
+}
+
+const getMovies = (arr) => {
+    return {
+        type: GET_MOVIES,
+        movies: arr,
+    }
+}
+
+const didLoad = () => {
+    return {
+        type: DID_LOAD,
+        isLoading: true,
+    }
+}
+
+const setCurrentDetailIndex = (index) => {
+    return {
+        type: SET_INDEX,
+        currentDetailIndex: index,
+    }
+}
+
+const addToCart = (index) => {
+    return {
+        type: ADD_TO_CART,
+        index: index,
+    }
+}
+
+const removeFromCart = (index) => {
+    return {
+        type: REMOVE_FROM_CART,
+        index: index,
     }
 }
 
@@ -91,9 +148,39 @@ const reducer = (state = initialState, action) => {
             newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
             console.log("new state:", newState);
             return newState;
+        case SHOW_ERROR:
+            console.log("currentScreen switched to CART");
+            newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
+            console.log("new state:", newState);
+            return newState;
         case CLOSE_MENU:
             console.log("currentScreen switched to MOBILE MENU");
             newState = Object.assign({}, state, { currentScreen: state.prevScreen, prevScreen: prevScreen });
+            console.log("new state:", newState);
+            return newState;
+        case GET_MOVIES:
+            console.log("movies got from API");
+            newState = Object.assign({}, state, { movies: action.movies });
+            console.log("new state:", newState);
+            return newState;
+        case DID_LOAD:
+            newState = Object.assign({}, state, { isLoading: action.isLoading, currentScreen: screens.HOME });
+            return newState;
+        case SET_INDEX:
+            console.log("current detail index switched to", action.currentDetailIndex);
+            newState = Object.assign({}, state, { currentDetailIndex: action.currentDetailIndex });
+            console.log("new state:", newState);
+            return newState;
+        case ADD_TO_CART:
+            console.log("current detail index added to cart", action.index);
+            newState = Object.assign({}, state, { cart: [...state.cart, action.index] });
+            console.log("new state:", newState);
+            return newState;
+        case REMOVE_FROM_CART:
+            console.log("current detail index removed from cart", action.index);
+            const itemIndex = state.cart.indexOf(action.index);
+            const newCart = state.cart.slice(0,itemIndex).concat(state.cart.slice(itemIndex+1));
+            newState = Object.assign({}, state, { cart: newCart });
             console.log("new state:", newState);
             return newState;
         default:
@@ -110,12 +197,18 @@ class Presentational extends Component {
     }
 
     componentDidMount() {
-        let t0 = Date.now();
-        let json = asyncCall();
-        console.log(`Async call completed in ${Date.now() - t0} ms`);
-        console.log('json:', json);
-        let moviesArr = makeMovies(json);
-        console.log('moviesArr:',moviesArr);
+        let moviesArr;
+        let json = asyncCall()
+            .then((response) => {
+                // console.log('response:',response);
+                moviesArr = makeMovies(response);
+                // console.log('moviesArr:',moviesArr);
+                this.props.getMovies(moviesArr);
+                this.props.didLoad();
+            })
+            .catch((error) => {
+                this.props.showScreen("ERROR");
+            });
         window.scrollTo(0, 0);
     }
 
@@ -140,12 +233,20 @@ function getCurrentScreen(state) {
 function mapStateToProps(state) {
     return {
         currentScreen: getCurrentScreen(state),
+        movies: state.movies,
+        currentDetailIndex: state.currentDetailIndex,
+        cart: state.cart,
     };
 }
 
 const mapDispatchToProps = dispatch => ({
     showScreen: screen => dispatch(showScreen(screen)),
     closeMenu: () => dispatch(closeMenu()),
+    getMovies: (arr) => dispatch(getMovies(arr)),
+    didLoad: () => dispatch(didLoad()),
+    setCurrentDetailIndex: (index) => dispatch(setCurrentDetailIndex(index)),
+    addToCart: (index) => dispatch(addToCart(index)),
+    removeFromCart: (index) => dispatch(removeFromCart(index)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);

@@ -9,13 +9,13 @@ library.add(faShoppingCart, faSearch) // adds an icon to lib
 class Header extends Component {
   render() {
     const props = this.props.props;
-    console.log("Header props:",props);
+    // console.log("Header props:",props);
 
     return (
       <header>
         <TopBar props={props} />
         <LogoArea props={props} />
-        <Navbar />
+        <Navbar props={props}/>
       </header>
     );
   }
@@ -24,7 +24,7 @@ class Header extends Component {
 class TopBar extends Component {
   render() {
     const props = this.props.props;
-    console.log("TopBar props:",props);
+    // console.log("TopBar props:",props);
 
     return (
       <div id='topBar' className='d-flex align-center'>
@@ -44,7 +44,7 @@ class TopBar extends Component {
 class LogoArea extends Component {
   render() {
     const props = this.props.props;
-    console.log("LogoArea props:",props);
+    // console.log("LogoArea props:",props);
 
     return (
       <div id='logoArea' className='d-flex align-center'>
@@ -82,14 +82,38 @@ class SearchBar extends Component {
 
 class Navbar extends Component {
   render() {
+    const props = this.props.props;
 
-    const menuList = ['Home', 'About', 'Popular', 'Deals', 'Categories', 'Blog', 'Contact'].map((elem) => {
-      return (
-        <li key={elem} className='navList-item d-flex align-center justify-center'>
-          <button className='nav-link anchor-btn'>{elem}</button>
-        </li>
-      );
-    });
+    const menuList = [
+      {
+          name: 'Home',
+          method: () => props.showScreen("HOME")
+      }, {
+          name: 'About',
+          method: () => false
+      }, {
+          name: 'Popular',
+          method: () => false
+      }, {
+          name: 'Deals',
+          method: () => false
+      }, {
+          name: 'Categories',
+          method: () => false
+      }, {
+          name: 'Blog',
+          method: () => false
+      }, {
+          name: 'Contact',
+          method: () => false
+      },
+  ].map((elem) => {
+    return (
+      <li key={elem.name} className='navList-item d-flex align-center justify-center'>
+        <button className='nav-link anchor-btn' onClick={elem.method}>{elem.name}</button>
+      </li>
+    );
+  });
 
     return (
       <nav id='mainNav' className='d-flex align-center justify-center'>

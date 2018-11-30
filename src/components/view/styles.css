@@ -997,6 +997,10 @@ span#topBar-buttons button:hover {
 #checkoutBtnContainer {
     width: 100%;
 }
+#checkoutBtnContainerEmptyCart {
+    width: 100%;
+    margin-top: 1rem;
+}
 
 #shopMoreBtn {
     margin-bottom: 1rem;
@@ -1086,6 +1090,12 @@ span#topBar-buttons button:hover {
     #checkoutBtnContainer {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    #checkoutBtnContainerEmptyCart {
+        flex-direction: row;
+        margin-top: 1rem;
+        justify-content: center;
     }
 
     #checkoutBtn, #shopMoreBtn {

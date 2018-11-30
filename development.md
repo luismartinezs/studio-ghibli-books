@@ -34,13 +34,18 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
         - toggle it when clicking hamburguer / X button OK
         - have buttons go to corresponding page OK
 
-    - Get json object
+    - Get json object OK
     - get dynamic website data from json
+        - dynamically display title of one movie in main banner OK
+        - dynamically display 5 items in most popular OK
+        - dysplay info in detail page OK
 
-    - Code simple error page: if fetch is not managed, show error page instead of home
+    - Code simple error page: if fetch is not managed, show error page instead of home OK
 
-    - Able to add items to cart
-    - Able to remove items from cart, and have price dynamically updated
+    - Able to add items to cart OK
+        - provide as props OK
+    - Able to remove items from cart, and have price dynamically updated OK
+    - dynamically show info of products in cart OK
 
 - Structure:
     - Convert stateless components to functions
@@ -49,12 +54,4 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 Maybe:
 - When click, on popular, go to popular section: https://codepen.io/takatama/pen/mVvbqx
 - Separate search bar and logo into different components so that I don't need to always have one with the other
-
-
-id	"2baf70d1-42bb-4437-b551-e5fed5a87abe"
-title	"Castle in the Sky"
-description	"The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world."
-director	"Hayao Miyazaki"
-producer	"Isao Takahata"
-release_date	"1986"
-rt_score	"95"
+- in popular section show movies ordered by rating

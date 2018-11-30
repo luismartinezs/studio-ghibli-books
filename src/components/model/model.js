@@ -11,7 +11,7 @@ async function asyncCall() {
         })
         .catch((error) => {
 
-            console.error(error);
+            throw(error);
 
         });
 
@@ -32,10 +32,12 @@ class Movie {
 
 function makeMovies(arr) {
     let moviesArr = [];
+    // console.log('arr:',arr);
 
     for (let i = 0; i < arr.length; i++) {
+        // console.log(arr[i]);
         moviesArr.push(
-            new Movie(arr.title, arr.description, arr.director, arr.producer, arr.release_date, arr.rt_score)
+            new Movie(arr[i].title, arr[i].description, arr[i].director, arr[i].producer, arr[i].release_date, arr[i].rt_score)
         );
     }
 
