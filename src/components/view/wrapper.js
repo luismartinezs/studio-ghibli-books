@@ -14,21 +14,20 @@ class Wrapper extends Component {
 
     const props = this.props.props;
     const screen = props.currentScreen;
-    console.log("Wrapper props:", props);
 
-    if ( screen === "LOADING" ) {
+    if (screen === "LOADING") {
       return (
-        <Loading/>
+        <Loading />
       );
     }
 
-    if ( screen === "ERROR" ) {
+    if (screen === "ERROR") {
       return (
-        <Error/>
+        <Error />
       );
     }
 
-    if ( screen === "MOBILE_MENU" ) {
+    if (screen === "MOBILE_MENU") {
       return (
         <MobileMenu props={props} />
       );
@@ -37,9 +36,9 @@ class Wrapper extends Component {
     return (
       <div id="wrapper">
         <Header props={props} />
-        { screen === "HOME" && <Home props={props} /> }
-        { screen === "CART" && <Cart props={props} /> }
-        { screen === "DETAIL" && <Detail props={props} /> }
+        {screen === "HOME" && <Home props={props} />}
+        {screen === "CART" && <Cart props={props} />}
+        {screen === "DETAIL" && <Detail props={props} />}
         <Footer props={props} />
       </div>
     );

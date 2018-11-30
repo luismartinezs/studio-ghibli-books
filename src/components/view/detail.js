@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Detail extends Component {
     render() {
         const props = this.props.props;
-        console.log("Detail props:", props);
 
         return (
             <div id='detailWrapper w-100'>
@@ -37,7 +36,7 @@ class Detail extends Component {
                             <button id='detailBuyBtn' onClick={() => {
                                 props.addToCart(props.currentDetailIndex);
                                 props.showScreen("CART");
-                                } }>Buy Now</button>
+                            }}>Buy Now</button>
                         </div>
                     </div>
                 </div>

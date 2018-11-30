@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Error extends Component {
     render() {
-        const props = this.props.props;
 
         return (
             <div className='d-flex text-center justify-center d-col'>

@@ -1,4 +1,3 @@
-// fetch JSON object from API
 async function asyncCall() {
     let url = 'https://ghibliapi.herokuapp.com/films';
 
@@ -11,13 +10,12 @@ async function asyncCall() {
         })
         .catch((error) => {
 
-            throw(error);
+            throw (error);
 
         });
 
 }
 
-// create class Books / Movies and store each entry in an array
 
 class Movie {
     constructor(title, description, director, producer, release_date, rt_score) {
@@ -30,12 +28,13 @@ class Movie {
     }
 }
 
+
+// @param {arr} array of objects with properties title, description, director, producer, release_date and rt_score
+// 
 function makeMovies(arr) {
     let moviesArr = [];
-    // console.log('arr:',arr);
 
     for (let i = 0; i < arr.length; i++) {
-        // console.log(arr[i]);
         moviesArr.push(
             new Movie(arr[i].title, arr[i].description, arr[i].director, arr[i].producer, arr[i].release_date, arr[i].rt_score)
         );
@@ -44,6 +43,5 @@ function makeMovies(arr) {
     return moviesArr;
 }
 
-// export the data to be used as state by Redux
 
-export { asyncCall , Movie , makeMovies };
+export { asyncCall, Movie, makeMovies };

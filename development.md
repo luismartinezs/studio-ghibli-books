@@ -48,11 +48,13 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - dynamically show info of products in cart OK
 
 - Structure:
-    - Convert stateless components to functions
+    - remove console.logs OK
+    - Convert stateless components to functions NO
     - Add propTypes method to each stateless functional component that defines what the prop types must be
-    - Comment code
+    - Comment code NO
 
 Maybe:
 - When click, on popular, go to popular section: https://codepen.io/takatama/pen/mVvbqx
 - Separate search bar and logo into different components so that I don't need to always have one with the other
 - in popular section show movies ordered by rating
+- Add propTypes method to each stateless functional component that defines what the prop types must be

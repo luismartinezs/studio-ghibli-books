@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-library.add(faTrashAlt) // adds an icon to lib
+library.add(faTrashAlt);
 
 
 class Cart extends Component {
     render() {
-        
+
         const props = this.props.props;
-        console.log("Cart props:", props);
 
         const price = {
             unitPrice: 19.90.toFixed(2),
@@ -17,12 +16,12 @@ class Cart extends Component {
             taxes: 0.21,
         };
 
-        price.subtotal = (price.unitPrice*props.cart.length).toFixed(2);
-        price.totalPrice = (price.subtotal * (1+price.taxes)).toFixed(2);
+        price.subtotal = (price.unitPrice * props.cart.length).toFixed(2);
+        price.totalPrice = (price.subtotal * (1 + price.taxes)).toFixed(2);
 
         let cartItems;
         if (props.cart.length > 0) {
-           cartItems = props.cart.map( (index) => { return <CartItem props={props} index={index} price={price}/> } );
+            cartItems = props.cart.map((index) => { return <CartItem props={props} index={index} price={price} key={index}/> });
         }
 
         if (props.cart.length === 0) {
@@ -76,7 +75,7 @@ class Cart extends Component {
                                 </li>
                                 <li className='d-flex'>
                                     <span className='cartTotalBox firstCol'>Taxes:</span>
-                                    <span className='cartTotalBox lastCol'>{(price.taxes*price.subtotal).toFixed(2) + price.currency}</span>
+                                    <span className='cartTotalBox lastCol'>{(price.taxes * price.subtotal).toFixed(2) + price.currency}</span>
                                 </li>
                                 <li className='d-flex'>
                                     <span className='cartTotalBox firstCol'>Total:</span>
@@ -99,9 +98,7 @@ class CartItem extends Component {
     render() {
         const props = this.props.props;
         const price = this.props.price;
-        console.log('CartItem props:', props);
         const index = this.props.index;
-        console.log("index:", index);
         const movie = props.movies[index];
 
         return (

@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-library.add(faCheckCircle) // adds an icon to lib
-// <FontAwesomeIcon icon={faPlay} />
+library.add(faCheckCircle);
 
 
 class Home extends Component {
     render() {
         const props = this.props.props;
-        console.log("Home props:", props);
 
         return (
             <main>
@@ -26,7 +24,6 @@ class Home extends Component {
 class Featured extends Component {
     render() {
         const props = this.props.props;
-        console.log("Featured props:", props);
 
         return (
             <section id='featured'>
@@ -60,13 +57,12 @@ class Popular extends Component {
     render() {
         const props = this.props.props;
         const range = this.props.range;
-        console.log("Popular props:", props);
 
-        const itemList = props.movies.slice(range.first, range.first+5).map((elem, index) => {
-            return (<li className='boxes-list-item text-center' key={index} onClick={ () => {
+        const itemList = props.movies.slice(range.first, range.first + 5).map((elem, index) => {
+            return (<li className='boxes-list-item text-center' key={index} onClick={() => {
                 props.showScreen("DETAIL");
                 props.setCurrentDetailIndex(index + range.first);
-                } }>
+            }}>
                 <img src={require('./images/book_cover_template.jpg')} alt={elem.title} />
                 <p><button className='anchor-btn'>{elem.title}</button></p>
             </li>)
@@ -95,7 +91,6 @@ class Popular extends Component {
 
 class Categories extends Component {
     render() {
-        const props = this.props.props;
 
         const categoryList = [0, 1, 2, 3, 4].map((elem) => {
             return (<li className='categories-list-item text-center d-flex d-col justify-center align-center' key={elem}>
@@ -124,6 +119,7 @@ class Categories extends Component {
 }
 
 class Newsletter extends Component {
+
     render() {
         return (
             <section id='newsletter' className='d-flex justify-center align-center w100'>

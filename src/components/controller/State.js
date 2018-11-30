@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux'
 import Wrapper from '../view/wrapper';
 import { asyncCall, makeMovies } from '../model/model';
 
 // REDUX
-// action
+// actions
 const SHOW_HOME = 'SHOW_HOME';
 const SHOW_DETAIL = 'SHOW_DETAIL';
 const SHOW_CART = 'SHOW_CART';
@@ -38,9 +37,8 @@ const initialState = {
     cart: [],
 };
 
-// action creator
+// action creators
 const showScreen = (screen) => {
-    console.log("Action creator showScreen called");
     switch (screen) {
         case screens.HOME:
             return {
@@ -81,7 +79,6 @@ const showScreen = (screen) => {
 }
 
 const closeMenu = () => {
-    console.log("closeMenu called");
     return {
         type: CLOSE_MENU,
     }
@@ -124,64 +121,44 @@ const removeFromCart = (index) => {
 
 // reducer
 const reducer = (state = initialState, action) => {
-    console.log("state:", state);
     let newState = {};
     let prevScreen = state.currentScreen;
+
     switch (action.type) {
         case SHOW_HOME:
-            console.log("currentScreen switched to HOME");
             newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
-            console.log("new state:", newState);
             return newState;
         case SHOW_DETAIL:
-            console.log("currentScreen switched to DETAIL");
             newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
-            console.log("new state:", newState);
             return newState;
         case SHOW_CART:
-            console.log("currentScreen switched to CART");
             newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
-            console.log("new state:", newState);
             return newState;
         case SHOW_MOBILE_MENU:
-            console.log("currentScreen switched to MOBILE MENU");
             newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
-            console.log("new state:", newState);
             return newState;
         case SHOW_ERROR:
-            console.log("currentScreen switched to CART");
             newState = Object.assign({}, state, { currentScreen: action.currentScreen, prevScreen: prevScreen });
-            console.log("new state:", newState);
             return newState;
         case CLOSE_MENU:
-            console.log("currentScreen switched to MOBILE MENU");
             newState = Object.assign({}, state, { currentScreen: state.prevScreen, prevScreen: prevScreen });
-            console.log("new state:", newState);
             return newState;
         case GET_MOVIES:
-            console.log("movies got from API");
             newState = Object.assign({}, state, { movies: action.movies });
-            console.log("new state:", newState);
             return newState;
         case DID_LOAD:
             newState = Object.assign({}, state, { isLoading: action.isLoading, currentScreen: screens.HOME });
             return newState;
         case SET_INDEX:
-            console.log("current detail index switched to", action.currentDetailIndex);
             newState = Object.assign({}, state, { currentDetailIndex: action.currentDetailIndex });
-            console.log("new state:", newState);
             return newState;
         case ADD_TO_CART:
-            console.log("current detail index added to cart", action.index);
             newState = Object.assign({}, state, { cart: [...state.cart, action.index] });
-            console.log("new state:", newState);
             return newState;
         case REMOVE_FROM_CART:
-            console.log("current detail index removed from cart", action.index);
             const itemIndex = state.cart.indexOf(action.index);
-            const newCart = state.cart.slice(0,itemIndex).concat(state.cart.slice(itemIndex+1));
+            const newCart = state.cart.slice(0, itemIndex).concat(state.cart.slice(itemIndex + 1));
             newState = Object.assign({}, state, { cart: newCart });
-            console.log("new state:", newState);
             return newState;
         default:
             return state;
@@ -192,23 +169,20 @@ const store = createStore(reducer);
 
 // REACT
 class Presentational extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         let moviesArr;
-        let json = asyncCall()
+
+        asyncCall()
             .then((response) => {
-                // console.log('response:',response);
                 moviesArr = makeMovies(response);
-                // console.log('moviesArr:',moviesArr);
                 this.props.getMovies(moviesArr);
                 this.props.didLoad();
             })
-            .catch((error) => {
+            .catch(() => {
                 this.props.showScreen("ERROR");
             });
+
         window.scrollTo(0, 0);
     }
 
@@ -225,14 +199,10 @@ class Presentational extends Component {
     }
 }
 
-function getCurrentScreen(state) {
-    return state.currentScreen;
-}
-
 // REACT-REDUX
 function mapStateToProps(state) {
     return {
-        currentScreen: getCurrentScreen(state),
+        currentScreen: state.currentScreen,
         movies: state.movies,
         currentDetailIndex: state.currentDetailIndex,
         cart: state.cart,

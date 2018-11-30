@@ -9,7 +9,6 @@ library.add(faTimesCircle) // adds an icon to lib
 class MobileMenu extends Component {
     render() {
         const props = this.props.props;
-        console.log("MobileMenu props:", props);
 
         const menuList = [
             {
