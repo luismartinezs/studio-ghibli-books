@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux'
 import Wrapper from '../view/wrapper';
+import { asyncCall, makeMovies } from '../model/model';
 
 // REDUX
 // action
@@ -109,6 +110,12 @@ class Presentational extends Component {
     }
 
     componentDidMount() {
+        let t0 = Date.now();
+        let json = asyncCall();
+        console.log(`Async call completed in ${Date.now() - t0} ms`);
+        console.log('json:', json);
+        let moviesArr = makeMovies(json);
+        console.log('moviesArr:',moviesArr);
         window.scrollTo(0, 0);
     }
 
