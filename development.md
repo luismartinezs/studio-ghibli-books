@@ -50,6 +50,7 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 - Structure:
     - Convert stateless components to functions
     - Add propTypes method to each stateless functional component that defines what the prop types must be
+    - Comment code
 
 Maybe:
 - When click, on popular, go to popular section: https://codepen.io/takatama/pen/mVvbqx
