@@ -12,9 +12,9 @@ class Home extends Component {
         return (
             <main>
                 <Featured props={props} />
-                <Popular props={props} range={{ first: 1 }} />
+                <ProductListing props={props} range='1' />
                 <Categories props={props} />
-                <Popular props={props} range={{ first: 6 }} />
+                <ProductListing props={props} range='6' />
                 <Newsletter />
             </main>
         );
@@ -52,16 +52,16 @@ class Featured extends Component {
     }
 }
 
-class Popular extends Component {
+class ProductListing extends Component {
 
     render() {
         const props = this.props.props;
-        const range = this.props.range;
+        const range = +this.props.range;
 
-        const itemList = props.movies.slice(range.first, range.first + 5).map((elem, index) => {
+        const itemList = props.movies.slice(range, range + 5).map((elem, index) => {
             return (<li className='boxes-list-item text-center' key={index} onClick={() => {
                 props.showScreen("DETAIL");
-                props.setCurrentDetailIndex(index + range.first);
+                props.setCurrentDetailIndex(index + range);
             }}>
                 <img src={require('./images/book_cover_template.jpg')} alt={elem.title} />
                 <p><button className='anchor-btn'>{elem.title}</button></p>

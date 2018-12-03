@@ -55,9 +55,9 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 
 - Corrections:
     - intenta separar el codi en funcions més petites
-        - per exemple al cart has de fer el render més petit critant a altres  funcions
-    - estas segur k en el render va tot el html allà ? no es pot posar en un fitxer a part?
-    - model no s’hauria de dir model.js sino movie.js
+        - per exemple al cart has de fer el render més petit critant a altres  funcions OK
+    - estas segur k en el render va tot el html allà ? no es pot posar en un fitxer a part? OK
+    - model no s’hauria de dir model.js sino movie.js OK
     - la crida a api no hauria d’estar al model sinó al controlador OK
     - i enlloc de crear la array de movies manualment pots utilitzar una llibreria k ho fa a partir del json k t’arriba
 

@@ -1,5 +1,4 @@
-async function asyncCall() {
-    let url = 'https://ghibliapi.herokuapp.com/films';
+async function asyncCall(url) {
 
     return fetch(url)
         .then((response) => response.json())

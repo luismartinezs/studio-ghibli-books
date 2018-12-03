@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Header from './header';
-import Footer from './footer';
-import Home from './home';
-import Detail from './detail';
-import Cart from './cart';
-import MobileMenu from './mobileMenu';
-import Loading from './loading';
-import Error from './error';
-import './styles.css';
+import Header from '../view/shared/header';
+import Footer from '../view/shared/footer';
+import Home from '../view/home';
+import Detail from '../view/detail';
+import Cart from '../view/cart';
+import MobileMenu from '../view/shared/mobileMenu';
+import Loading from '../view/loading';
+import Error from '../view/error';
+import '../view/styles.css';
 
 class Wrapper extends Component {
   render() {

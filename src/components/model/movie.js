@@ -1,6 +1,3 @@
-
-
-
 class Movie {
     constructor(title, description, director, producer, release_date, rt_score) {
         this.title = title;
