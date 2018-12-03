@@ -43,7 +43,7 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 
 - Corrections:
     - intenta separar el codi en funcions més petites
-    - per exemple al cart has de fer el render més petit critant a altres  funcions
+        - per exemple al cart has de fer el render més petit critant a altres  funcions
     - estas segur k en el render va tot el html allà ? no es pot posar en un fitxer a part?
     - model no s’hauria de dir model.js sino movie.js
     - la crida a api no hauria d’estar al model sinó al controlador
