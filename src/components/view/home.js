@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-library.add(faCheckCircle) // adds an icon to lib
-// <FontAwesomeIcon icon={faPlay} />
+library.add(faCheckCircle);
 
 
 class Home extends Component {
@@ -12,10 +11,10 @@ class Home extends Component {
 
         return (
             <main>
-                <Featured props={props}/>
-                <Popular props={props}/>
-                <Categories props={props}/>
-                <Popular props={props}/>
+                <Featured props={props} />
+                <Popular props={props} range={{ first: 1 }} />
+                <Categories props={props} />
+                <Popular props={props} range={{ first: 6 }} />
                 <Newsletter />
             </main>
         );
@@ -39,7 +38,7 @@ class Featured extends Component {
                         </div>
 
                         <div id='featuredBox-container'>
-                            <h1>My Neighbor Totoro</h1>
+                            <h1>{props.movies[0].title}</h1>
                             <span>25th anniversary edition</span>
                             <button id='buyNowBtn' onClick={() => props.showScreen("DETAIL")}>Buy now</button>
                         </div>
@@ -57,12 +56,16 @@ class Popular extends Component {
 
     render() {
         const props = this.props.props;
+        const range = this.props.range;
 
-        const itemList = [0,1,2,3,4].map( (elem) => {
-            return (<li className='boxes-list-item text-center' key={elem} onClick={() => props.showScreen("DETAIL")}>
-            <img src={require('./images/book_cover_template.jpg')} alt='My Neighbor Totoro' />
-            <p><button className='anchor-btn'>My Neighbor Totoro</button></p>
-        </li>)
+        const itemList = props.movies.slice(range.first, range.first + 5).map((elem, index) => {
+            return (<li className='boxes-list-item text-center' key={index} onClick={() => {
+                props.showScreen("DETAIL");
+                props.setCurrentDetailIndex(index + range.first);
+            }}>
+                <img src={require('./images/book_cover_template.jpg')} alt={elem.title} />
+                <p><button className='anchor-btn'>{elem.title}</button></p>
+            </li>)
         });
 
         return (
@@ -88,13 +91,12 @@ class Popular extends Component {
 
 class Categories extends Component {
     render() {
-        const props = this.props.props;
 
-        const categoryList = [0,1,2,3,4].map( (elem) => {
+        const categoryList = [0, 1, 2, 3, 4].map((elem) => {
             return (<li className='categories-list-item text-center d-flex d-col justify-center align-center' key={elem}>
-            <div className='categoryIcon'><FontAwesomeIcon icon={faCheckCircle} size="7x" /></div>
-            <h3><button className="anchor-btn">Fantasy</button></h3>
-        </li>)
+                <div className='categoryIcon'><FontAwesomeIcon icon={faCheckCircle} size="7x" /></div>
+                <h3><button className="anchor-btn">Fantasy</button></h3>
+            </li>)
         });
 
         return (
@@ -117,6 +119,7 @@ class Categories extends Component {
 }
 
 class Newsletter extends Component {
+
     render() {
         return (
             <section id='newsletter' className='d-flex justify-center align-center w100'>

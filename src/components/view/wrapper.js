@@ -4,6 +4,9 @@ import Footer from './footer';
 import Home from './home';
 import Detail from './detail';
 import Cart from './cart';
+import MobileMenu from './mobileMenu';
+import Loading from './loading';
+import Error from './error';
 import './styles.css';
 
 class Wrapper extends Component {
@@ -11,16 +14,35 @@ class Wrapper extends Component {
 
     const props = this.props.props;
     const screen = props.currentScreen;
-    console.log("Wrapper props:",props);
 
+    if (screen === "LOADING") {
       return (
-        <div id="wrapper">
-          <Header props={props}/>
-          {screen === "HOME" ? <Home props={props}/> : screen === "CART" ? <Cart /> : <Detail props={props}/>}
-          <Footer props={props}/>
-        </div>
+        <Loading />
       );
     }
+
+    if (screen === "ERROR") {
+      return (
+        <Error />
+      );
+    }
+
+    if (screen === "MOBILE_MENU") {
+      return (
+        <MobileMenu props={props} />
+      );
+    }
+
+    return (
+      <div id="wrapper">
+        <Header props={props} />
+        {screen === "HOME" && <Home props={props} />}
+        {screen === "CART" && <Cart props={props} />}
+        {screen === "DETAIL" && <Detail props={props} />}
+        <Footer props={props} />
+      </div>
+    );
   }
+}
 
 export default Wrapper;
