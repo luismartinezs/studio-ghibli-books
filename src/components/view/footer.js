@@ -11,7 +11,7 @@ class Footer extends Component {
 
         return (
             <footer>
-                <MainWrapper props={props}/>
+                <MainWrapper props={props} />
                 <BottomBar />
             </footer>
         );
@@ -22,13 +22,13 @@ class MainWrapper extends Component {
     render() {
         const props = this.props.props;
 
-        const linkList = ['Home', 'About', 'Popular', 'Deals', 'Blog', 'Contact'].map( (elem) => {
+        const linkList = ['Home', 'About', 'Popular', 'Deals', 'Blog', 'Contact'].map((elem) => {
             return (
                 <li key={elem}><button className="anchor-btn" onClick={() => props.showScreen("HOME")}>{elem}</button></li>
             );
         });
 
-        const categoryList = ['Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy'].map( (elem, index) => {
+        const categoryList = ['Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy', 'Fantasy'].map((elem, index) => {
             return (
                 <li key={index}><button className="anchor-btn">{elem}</button></li>
             );
