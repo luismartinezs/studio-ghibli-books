@@ -167,7 +167,6 @@ class CartItem extends Component {
         const props = this.props.props;
         const price = this.props.price;
         const index = this.props.index;
-        const movie = props.movies[index];
 
         return (
             <div className='cart-item-wrapper'>
