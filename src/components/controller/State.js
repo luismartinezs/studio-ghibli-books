@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux'
 import Wrapper from '../view/wrapper';
-import { asyncCall, makeMovies } from '../model/model';
+import { makeMovies } from '../model/movie';
+import { asyncCall } from './helper';
 
 // REDUX
 // actions
