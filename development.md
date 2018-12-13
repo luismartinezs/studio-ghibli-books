@@ -53,6 +53,14 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
     - Add propTypes method to each stateless functional component that defines what the prop types must be
     - Comment code NO
 
+- Corrections:
+    - intenta separar el codi en funcions més petites
+        - per exemple al cart has de fer el render més petit critant a altres  funcions OK
+    - estas segur k en el render va tot el html allà ? no es pot posar en un fitxer a part? OK
+    - model no s’hauria de dir model.js sino movie.js OK
+    - la crida a api no hauria d’estar al model sinó al controlador OK
+    - i enlloc de crear la array de movies manualment pots utilitzar una llibreria k ho fa a partir del json k t’arriba
+
 Maybe:
 - When click, on popular, go to popular section: https://codepen.io/takatama/pen/mVvbqx
 - Separate search bar and logo into different components so that I don't need to always have one with the other

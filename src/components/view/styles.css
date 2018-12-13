@@ -795,7 +795,7 @@ span#topBar-buttons button:hover {
 /* DETAIL PAGE STYLES */
 
 #detailContainer {
-    margin: 5rem 0 5rem 0;
+    margin: 5rem 1rem 5rem 1rem;
 }
 
 #detailImgWrapper {
@@ -852,6 +852,7 @@ span#topBar-buttons button:hover {
     #detailContainer {
         flex-direction: row;
         align-items: flex-start;
+        margin: 5rem 2rem 5rem 2rem;
     }
     #detailTxtContent {
         margin-right: 2rem;

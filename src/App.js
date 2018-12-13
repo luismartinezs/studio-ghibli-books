@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Wrapper from './components/controller/State';
+import Wrapper from './components/viewModel/stateManagement';
 // import './App.css';
 
 class App extends Component {

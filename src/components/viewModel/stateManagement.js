@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux'
-import Wrapper from '../view/wrapper';
-import { asyncCall, makeMovies } from '../model/model';
+import Wrapper from './wrapper';
+import { makeMovies } from '../model/movie';
+import { asyncCall } from './asyncCall';
 
 // REDUX
+// Standard REDUX structure: https://redux.js.org/basics/exampletodolist
 // actions
 const SHOW_HOME = 'SHOW_HOME';
 const SHOW_DETAIL = 'SHOW_DETAIL';
@@ -172,8 +174,9 @@ class Presentational extends Component {
 
     componentDidMount() {
         let moviesArr;
+        let url = 'https://ghibliapi.herokuapp.com/films';
 
-        asyncCall()
+        asyncCall(url)
             .then((response) => {
                 moviesArr = makeMovies(response);
                 this.props.getMovies(moviesArr);
