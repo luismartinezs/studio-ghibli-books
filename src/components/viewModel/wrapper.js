@@ -1,36 +1,29 @@
-import React, { Component } from 'react';
-import Header from '../view/shared/header';
-import Footer from '../view/shared/footer';
-import Home from '../view/home';
-import Detail from '../view/detail';
-import Cart from '../view/cart';
-import MobileMenu from '../view/shared/mobileMenu';
-import Loading from '../view/loading';
-import Error from '../view/error';
-import '../view/styles.css';
+import React, { Component } from "react";
+import Header from "../view/shared/header";
+import Footer from "../view/shared/footer";
+import Home from "../view/home";
+import Detail from "../view/detail";
+import Cart from "../view/cart";
+import MobileMenu from "../view/shared/mobileMenu";
+import Loading from "../view/loading";
+import Error from "../view/error";
+import "../view/styles.css";
 
 class Wrapper extends Component {
   render() {
-
     const props = this.props.props;
     const screen = props.currentScreen;
 
     if (screen === "LOADING") {
-      return (
-        <Loading />
-      );
+      return <Loading />;
     }
 
     if (screen === "ERROR") {
-      return (
-        <Error />
-      );
+      return <Error />;
     }
 
     if (screen === "MOBILE_MENU") {
-      return (
-        <MobileMenu props={props} />
-      );
+      return <MobileMenu props={props} />;
     }
 
     return (
