@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
-import Wrapper from "./wrapper";
+import PresentationalWrapper from "../view/presentationalWrapper";
 import { makeMovies } from "../model/movie";
 import { asyncCall } from "./asyncCall";
 
@@ -225,7 +225,7 @@ class Presentational extends Component {
   render() {
     return (
       <div id="presentational">
-        <Wrapper props={this.props} />
+        <PresentationalWrapper props={this.props} />
       </div>
     );
   }
