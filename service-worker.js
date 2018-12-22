@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/studio-ghibli-books/precache-manifest.39d4512bc595e413d62bf76276022e6b.js"
+  "/studio-ghibli-books/precache-manifest.9ac16f5af10a2748cd83902780f6a005.js"
 );
 
 workbox.clientsClaim();
