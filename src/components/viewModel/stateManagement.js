@@ -224,7 +224,7 @@ class Presentational extends Component {
 
   render() {
     return (
-      <div id="presentational">
+      <div>
         <PresentationalWrapper props={this.props} />
       </div>
     );

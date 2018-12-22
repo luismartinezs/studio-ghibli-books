@@ -40,21 +40,12 @@ class EmptyCart extends Component {
     const { props } = this.props;
 
     return (
-      <div id="cartWrapper" className="cart__wrapper">
-        <div
-          id="cartContainer"
-          className="d-flex d-col justify-center align-center text-center cart__container"
-        >
-          <h1 id="cartHeading" className="cart__heading">
-            Shopping cart
-          </h1>
+      <div className="cart__wrapper">
+        <div className="d-flex d-col justify-center align-center text-center cart__container">
+          <h1 className="cart__heading">Shopping cart</h1>
           <p>You didn't add anything to your cart yet</p>
-          <div
-            id="checkoutBtnContainerEmptyCart"
-            className="d-flex d-col justify-center align-center text-center w100 checkout-button-container--empty-cart"
-          >
+          <div className="d-flex d-col justify-center align-center text-center w100 checkout-button-container--empty-cart">
             <button
-              id="shopMoreBtn"
               className="btn btn-secondary btn-block shop-more-button"
               onClick={() => props.showScreen("HOME")}
             >
@@ -69,30 +60,30 @@ class EmptyCart extends Component {
 
 const CartHeader = () => (
   <div>
-    <h1 id="cartHeading">Shopping cart</h1>
-    <div id="shippingCostContainer" className="shipping-cost__container">
+    <h1>Shopping cart</h1>
+    <div className="shipping-cost__container">
       <p>Shipping cost starting from 7€</p>
     </div>
   </div>
 );
 
 const CartList = ({ cartItems }) => (
-  <div id="cartListContainer" className="w100">
-    <ul id="cartList-mobile" className="d-flex d-col w100 cart-list--mobile">
-      <li id="cartItemHead" className="text-center w100 cart-item__head">
-        <div id="headTrash" className="cart-list__head__trash">
+  <div className="w100">
+    <ul className="d-flex d-col w100 cart-list--mobile">
+      <li className="text-center w100 cart-item__head">
+        <div className="cart-list__head__trash">
           <span className="head-item" />
         </div>
 
-        <div id="headImage" className="cart-list__head__image">
+        <div className="cart-list__head__image">
           <span className="head-item">Image</span>
         </div>
 
-        <div id="headName" className="cart-list__head__name">
+        <div className="cart-list__head__name">
           <span className="head-item">Product Name</span>
         </div>
 
-        <div id="headTotal" className="cart-list__head__total">
+        <div className="cart-list__head__total">
           <span className="head-item">Total</span>
         </div>
       </li>
@@ -103,8 +94,8 @@ const CartList = ({ cartItems }) => (
 );
 
 const CartPrice = ({ price }) => (
-  <div id="cartTotalWrapper" className="cart-total__wrapper">
-    <ul id="cartTotalContainer">
+  <div className="cart-total__wrapper">
+    <ul>
       <li className="d-flex">
         <span className="cart-total__box first-col">Sub-total:</span>
         <span className="cart-total__box last-col">
@@ -130,21 +121,14 @@ const CartPrice = ({ price }) => (
 );
 
 const CartButtons = ({ props }) => (
-  <div
-    id="checkoutBtnContainer"
-    className="d-flex d-col w100 checkout-button__container"
-  >
+  <div className="d-flex d-col w100 checkout-button__container">
     <button
-      id="shopMoreBtn"
       className="btn btn-secondary btn-block shop-more-button"
       onClick={() => props.showScreen("HOME")}
     >
       Continue shopping
     </button>
-    <button
-      id="checkoutBtn"
-      className="btn btn-primary btn-block checkout-button"
-    >
+    <button className="btn btn-primary btn-block checkout-button">
       Checkout
     </button>
   </div>
@@ -164,8 +148,8 @@ class FullCart extends Component {
     }
 
     return (
-      <div id="cartWrapper" className="cart__wrapper">
-        <div id="cartContainer" className="cart__container">
+      <div className="cart__wrapper">
+        <div className="cart__container">
           <CartHeader />
 
           <CartList cartItems={cartItems} />
@@ -241,10 +225,7 @@ class CartItemDesktop extends Component {
     return (
       <li className="cart-item-wrapper desktop">
         <div className="cart-item-container d-flex justify-center align-center">
-          <div
-            id="itemTrash"
-            className="d-flex justify-center align-center cart-item__trash"
-          >
+          <div className="d-flex justify-center align-center cart-item__trash">
             <button
               className="btn delete-button"
               onClick={() => props.removeFromCart(index)}
@@ -253,10 +234,7 @@ class CartItemDesktop extends Component {
             </button>
           </div>
 
-          <div
-            id="itemImage"
-            className="d-flex justify-center align-center cart-item__img-box"
-          >
+          <div className="d-flex justify-center align-center cart-item__img-box">
             <div className="cart-item__img-wrapper d-flex justify-center align-center">
               <img
                 className="cart-item__img"
@@ -266,11 +244,11 @@ class CartItemDesktop extends Component {
             </div>
           </div>
 
-          <div id="itemName" className="cart-item__name">
+          <div className="cart-item__name">
             <h3>{movie.title}</h3>
           </div>
 
-          <div id="itemTotal" className="cart-item__total">
+          <div className="cart-item__total">
             <span>{price.unitPrice + price.currency}</span>
           </div>
         </div>

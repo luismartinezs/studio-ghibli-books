@@ -27,23 +27,17 @@ class TopBar extends Component {
     const { props } = this.props;
 
     return (
-      <div id="topBar" className="d-flex align-center top-bar">
-        <div
-          id="topBar-container"
-          className="d-flex align-center justify-center top-bar__container"
-        >
-          <span id="contactInfo" className="contact-info">
+      <div className="d-flex align-center top-bar">
+        <div className="d-flex align-center justify-center top-bar__container">
+          <span className="contact-info">
             Street - City - Call us: 555-555-555 - email: username@gmail.com
           </span>
-          <span id="topBar-buttons" className="top-bar__buttons">
-            <button id="myAccountBtn" className="my-account__button">
-              My account
-            </button>
-            <button id="cartBtn" onClick={() => props.showScreen("CART")}>
+          <span className="top-bar__buttons">
+            <button className="my-account__button">My account</button>
+            <button onClick={() => props.showScreen("CART")}>
               <FontAwesomeIcon icon={faShoppingCart} />
             </button>
             <button
-              id="burgerMenuBtn"
               className="burger-menu__button"
               onClick={() => props.showScreen("MOBILE_MENU")}
             >
@@ -61,27 +55,19 @@ class LogoArea extends Component {
     const { props } = this.props;
 
     return (
-      <div id="logoArea" className="d-flex align-center logo-area">
-        <div
-          id="logoArea-container"
-          className="d-flex align-center logo-area__container"
-        >
+      <div className="d-flex align-center logo-area">
+        <div className="d-flex align-center logo-area__container">
           <button
-            id="logoAnchor"
             className="logo__anchor"
             onClick={() => props.showScreen("HOME")}
           >
-            <div
-              id="logo-container"
-              className="d-flex align-center logo__container"
-            >
+            <div className="d-flex align-center logo__container">
               <img
-                id="logo-main"
                 className="logo__main"
                 src="http://www.ghibli.jp/img/home.png"
                 alt="Logo"
               />
-              <span id="tagline" className="tagline">
+              <span className="tagline">
                 <strong>B</strong>ook <strong>S</strong>tore
               </span>
             </div>
@@ -98,7 +84,6 @@ class SearchBar extends Component {
   render() {
     return (
       <div
-        id="searchBar"
         className="search__bar"
         onSubmit={e => {
           e.preventDefault();
@@ -106,12 +91,11 @@ class SearchBar extends Component {
       >
         <form>
           <input
-            id="searchInput"
             className="search__input"
             type="text"
             placeholder="Search by book, author, keyword..."
           />
-          <button id="searchBtn" className="search__button">
+          <button className="search__button">
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </form>
@@ -167,10 +151,8 @@ class Navbar extends Component {
     });
 
     return (
-      <nav id="mainNav" className="d-flex align-center justify-center main-nav">
-        <ul id="navList" className="d-flex nav-list">
-          {menuList}
-        </ul>
+      <nav className="d-flex align-center justify-center main-nav">
+        <ul className="d-flex nav-list">{menuList}</ul>
       </nav>
     );
   }

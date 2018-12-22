@@ -6,7 +6,7 @@ library.add(faCheckCircle);
 
 class Home extends Component {
   render() {
-    const props = this.props.props;
+    const { props } = this.props;
 
     return (
       <main>
@@ -22,29 +22,24 @@ class Home extends Component {
 
 class Featured extends Component {
   render() {
-    const props = this.props.props;
+    const { props } = this.props;
 
     return (
-      <section id="featured" className="featured">
+      <section className="featured">
         <div className="mask d-flex align-center justify-center">
-          <div
-            id="featuredContainer"
-            className="d-flex align-center justify-center text-center featured__container"
-          >
-            <div id="featuredBook-wrapper" className="featured__book-wrapper">
+          <div className="d-flex align-center justify-center text-center featured__container">
+            <div className="featured__book-wrapper">
               <img
-                id="featuredBookThumbnail"
                 className="featured__book-thumbnail"
                 src={require("./images/book_cover_template.jpg")}
                 alt="lord of the rings 50th anniversary edition"
               />
             </div>
 
-            <div id="featuredBox-container" className="featured__box-container">
+            <div className="featured__box-container">
               <h1>{props.movies[0].title}</h1>
               <span>25th anniversary edition</span>
               <button
-                id="buyNowBtn"
                 className="buy-now-button"
                 onClick={() => props.showScreen("DETAIL")}
               >
@@ -60,7 +55,7 @@ class Featured extends Component {
 
 class ProductListing extends Component {
   render() {
-    const props = this.props.props;
+    const { props } = this.props;
     const range = +this.props.range;
 
     const itemList = props.movies.slice(range, range + 5).map((elem, index) => {
@@ -85,15 +80,10 @@ class ProductListing extends Component {
     });
 
     return (
-      <section id="popular" className="boxes-wrapper d-flex justify-center">
-        <div
-          id="popular-container"
-          className="boxes-container d-flex d-col justify-center align-center"
-        >
+      <section className="boxes-wrapper d-flex justify-center">
+        <div className="boxes-container d-flex d-col justify-center align-center">
           <h2>Most popular</h2>
-          <ul id="popularList" className="boxes-list d-flex justify-center">
-            {itemList}
-          </ul>
+          <ul className="boxes-list d-flex justify-center">{itemList}</ul>
 
           <button className="btn see-more-button">See more</button>
         </div>
@@ -121,19 +111,10 @@ class Categories extends Component {
     });
 
     return (
-      <section
-        id="categories"
-        className="d-flex d-col align-center justify-center w100 categories"
-      >
-        <div
-          id="categories-container"
-          className="d-flex d-col justify-center align-center categories__container"
-        >
+      <section className="d-flex d-col align-center justify-center w100 categories">
+        <div className="d-flex d-col justify-center align-center categories__container">
           <h2>Categories</h2>
-          <ul
-            id="categoriesList"
-            className="d-flex justify-center align-baseline w100 categories__list"
-          >
+          <ul className="d-flex justify-center align-baseline w100 categories__list">
             {categoryList}
           </ul>
         </div>
@@ -145,29 +126,20 @@ class Categories extends Component {
 class Newsletter extends Component {
   render() {
     return (
-      <section
-        id="newsletter"
-        className="d-flex justify-center align-center w100 newsletter"
-      >
-        <div
-          id="newsletterContainer"
-          className="d-flex d-col justify-center align-center newsletter__container"
-        >
+      <section className="d-flex justify-center align-center w100 newsletter">
+        <div className="d-flex d-col justify-center align-center newsletter__container">
           <h2>Subscribe</h2>
 
-          <form id="newsletterForm">
+          <form className="newsletter__form">
             <input
-              id="newsletterInput"
               className="newsletter__input"
               type="text"
               placeholder="Enter your email"
             />
-            <button id="submitBtn" className="submit-button">
-              Submit
-            </button>
+            <button className="submit-button">Submit</button>
           </form>
 
-          <p id="spamMsg" className="text-center no-spam-message">
+          <p className="text-center no-spam-message">
             We don't ever send spam. Like you, we hate spam and we know that if
             we send spam to you, you will immediately unsubscribe (and you
             should).

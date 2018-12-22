@@ -5,12 +5,9 @@ class Detail extends Component {
     const { props } = this.props;
 
     return (
-      <div id="detailWrapper w-100">
-        <div
-          id="detailContainer"
-          className="d-flex d-col justify-center align-center w-100 detail__container"
-        >
-          <div id="detailImgWrapper" className="detail__img-wrapper">
+      <div>
+        <div className="d-flex d-col justify-center align-center w-100 detail__container">
+          <div className="detail__img-wrapper">
             <img
               src={require("./images/book_cover_template.jpg")}
               alt={props.movies[props.currentDetailIndex].title}
@@ -29,14 +26,14 @@ class DetailArea extends Component {
     const { props } = this.props;
 
     return (
-      <div id="detailTxtContent" className="detail__text-content">
-        <div id="detailTxtMain">
+      <div className="detail__text-content">
+        <div>
           <h2>{props.movies[props.currentDetailIndex].title}</h2>
-          <p id="detailTxtDescription" className="detail__text-description">
+          <p className="detail__text-description">
             {props.movies[props.currentDetailIndex].description}
           </p>
         </div>
-        <div id="detailTxtExtra" className="detail__text-extra">
+        <div className="detail__text-extra">
           <div>
             <span className="key">Director:</span>{" "}
             <span>{props.movies[props.currentDetailIndex].director}</span>
@@ -54,14 +51,11 @@ class DetailArea extends Component {
             <span>{props.movies[props.currentDetailIndex].rt_score}</span>
           </div>
         </div>
-        <div id="priceWrapper" className="price__wrapper">
-          <span id="price" className="price">
-            €19.90
-          </span>
+        <div className="price__wrapper">
+          <span className="price">€19.90</span>
         </div>
         <div>
           <button
-            id="detailBuyBtn"
             className="detail__buy-button"
             onClick={() => {
               props.addToCart(props.currentDetailIndex);

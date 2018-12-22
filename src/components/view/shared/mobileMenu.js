@@ -7,7 +7,7 @@ library.add(faTimesCircle); // adds an icon to lib
 
 class MobileMenu extends Component {
   render() {
-    const props = this.props.props;
+    const { props } = this.props;
 
     const menuList = [
       {
@@ -49,26 +49,19 @@ class MobileMenu extends Component {
     });
 
     return (
-      <div id="mobileMenuWrapper" className="h100 mobile-menu__wrapper">
-        <div id="mobileMenuContainer" className="d-flex d-col">
+      <div className="h100 mobile-menu__wrapper">
+        <div className="d-flex d-col">
           <button
-            id="closeBtn"
             className="d-block mobile-menu__close-button"
             onClick={() => props.closeMenu()}
           >
             <FontAwesomeIcon icon={faTimesCircle} />
           </button>
-          <div id="menuListWrapper" className="mobile-menu-list__wrapper">
-            <ul
-              id="menuList"
-              className="d-flex d-col justify-center align-center text-center mobile-menu-list"
-            >
+          <div className="mobile-menu-list__wrapper">
+            <ul className="d-flex d-col justify-center align-center text-center mobile-menu-list">
               {menuList}
-              <li id="myAccount">
-                <button
-                  id="menuListAccountBtn"
-                  className="anchor-btn mobile-menu-list__account-button"
-                >
+              <li>
+                <button className="anchor-btn mobile-menu-list__account-button">
                   My Account
                 </button>
               </li>

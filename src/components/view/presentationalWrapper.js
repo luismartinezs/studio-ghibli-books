@@ -11,27 +11,27 @@ import "./styles.css";
 
 class PresentationalWrapper extends Component {
   render() {
-    const props = this.props.props;
-    const screen = props.currentScreen;
+    const { props } = this.props;
+    const { currentScreen } = props;
 
-    if (screen === "LOADING") {
+    if (currentScreen === "LOADING") {
       return <Loading />;
     }
 
-    if (screen === "ERROR") {
+    if (currentScreen === "ERROR") {
       return <Error />;
     }
 
-    if (screen === "MOBILE_MENU") {
+    if (currentScreen === "MOBILE_MENU") {
       return <MobileMenu props={props} />;
     }
 
     return (
-      <div id="PresentationalWrapper">
+      <div>
         <Header props={props} />
-        {screen === "HOME" && <Home props={props} />}
-        {screen === "CART" && <Cart props={props} />}
-        {screen === "DETAIL" && <Detail props={props} />}
+        {currentScreen === "HOME" && <Home props={props} />}
+        {currentScreen === "CART" && <Cart props={props} />}
+        {currentScreen === "DETAIL" && <Detail props={props} />}
         <Footer props={props} />
       </div>
     );
