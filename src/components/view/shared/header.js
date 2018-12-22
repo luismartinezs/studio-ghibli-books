@@ -43,8 +43,8 @@ class TopBar extends Component {
               <FontAwesomeIcon icon={faShoppingCart} />
             </button>
             <button
-              id="burguerMenuBtn"
-              className="burguer-menu__button"
+              id="burgerMenuBtn"
+              className="burger-menu__button"
               onClick={() => props.showScreen("MOBILE_MENU")}
             >
               <FontAwesomeIcon icon={faBars} />
