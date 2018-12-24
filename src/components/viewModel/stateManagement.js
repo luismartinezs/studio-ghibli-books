@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider, connect } from "react-redux";
+import thunk from 'redux-thunk';
 import PresentationalWrapper from "../view/presentationalWrapper";
 import { makeMovies } from "../model/movie";
-import { asyncCall } from "./asyncCall";
 
 // REDUX
 // Standard REDUX structure: https://redux.js.org/basics/exampletodolist
@@ -19,6 +19,8 @@ const DID_LOAD = "DID_LOAD";
 const SET_INDEX = "SET_INDEX";
 const ADD_TO_CART = "ADD_TO_CART";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+const REQUEST_DATA = "REQUEST_DATA";
+const RECEIVE_DATA = "RECEIVE_DATA";
 
 const screens = {
   HOME: "HOME",
@@ -121,6 +123,27 @@ const removeFromCart = index => {
   };
 };
 
+const requestData = () => {
+  return { type: REQUEST_DATA };
+};
+
+const receiveData = json => {
+  return {
+    type: RECEIVE_DATA,
+    movies: makeMovies(json)
+  };
+};
+
+const fetchData = url => dispatch => {
+  dispatch(requestData());
+  return fetch(url)
+    .then(response => response.json())
+    .then(json => dispatch(receiveData(json)))
+    .catch(() => {
+      dispatch(showScreen(screens.ERROR));
+    });
+};
+
 // reducer
 const reducer = (state = initialState, action) => {
   let newState = {};
@@ -189,31 +212,33 @@ const reducer = (state = initialState, action) => {
         .concat(state.cart.slice(itemIndex + 1));
       newState = Object.assign({}, state, { cart: newCart });
       return newState;
+    case REQUEST_DATA:
+      return Object.assign({}, state, { isLoading: true });
+    case RECEIVE_DATA:
+      return Object.assign({}, state, {
+        movies: action.movies,
+        isLoading: false,
+        currentScreen: screens.HOME
+      });
     default:
       return state;
   }
 };
 
+const middleware = [ thunk ];
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
-  reducer /* preloadedState, */,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  reducer,
+  composeEnhancer(applyMiddleware(...middleware)),
 );
 
 // REACT
 class Presentational extends Component {
   componentDidMount() {
-    let moviesArr;
     let url = "https://ghibliapi.herokuapp.com/films";
 
-    asyncCall(url)
-      .then(response => {
-        moviesArr = makeMovies(response);
-        this.props.getMovies(moviesArr);
-        this.props.didLoad();
-      })
-      .catch(() => {
-        this.props.showScreen("ERROR");
-      });
+    this.props.fetchData(url);
 
     window.scrollTo(0, 0);
   }
@@ -248,7 +273,8 @@ const mapDispatchToProps = dispatch => ({
   didLoad: () => dispatch(didLoad()),
   setCurrentDetailIndex: index => dispatch(setCurrentDetailIndex(index)),
   addToCart: index => dispatch(addToCart(index)),
-  removeFromCart: index => dispatch(removeFromCart(index))
+  removeFromCart: index => dispatch(removeFromCart(index)),
+  fetchData: url => dispatch(fetchData(url))
 });
 
 const Container = connect(
