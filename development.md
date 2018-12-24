@@ -74,7 +74,7 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
   - import img src instead of adding the relative path // not sure how to do this, I'm using "require" DONE
   - remove all the default create-react-app files and readmes DONE
   - write own readme DONE
-  - Do the async call with redux.applyMiddleWare
+  - Do the async call with Redux.applyMiddleWare
   - Pass the price with the data instead of generating it in the component
   - Use defaultProps for each component
   - Use propTypes for each component
