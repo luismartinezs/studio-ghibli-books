@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faShoppingCart, faSearch);
 
+
 class Header extends Component {
   render() {
     const { props } = this.props;
@@ -64,7 +65,7 @@ class LogoArea extends Component {
             <div className="d-flex align-center logo__container">
               <img
                 className="logo__main"
-                src="http://www.ghibli.jp/img/home.png"
+                src={require("../images/logo.png")}
                 alt="Logo"
               />
               <span className="tagline">

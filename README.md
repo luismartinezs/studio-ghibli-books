@@ -1,46 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Studio Ghibli Ecommerce
 
-See the UI: https://luismartinezs.github.io/studio-ghibli-books/
+Small App that consumes the [Studio Ghibli API](https://ghibliapi.herokuapp.com/) and displays a minimal fully-responsive responsive ecommerce. Currently it has a Home, a Detail page and a Shopping Cart.
 
-## Available Scripts
+See the App user interface here: https://luismartinezs.github.io/studio-ghibli-books/
 
-In the project directory, you can run:
+This project was done as a class exercise to learn / practice React.
 
-### `npm start`
+## Current pipeline
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Since I've gone through most of the React documentation, I know now more than when I created this app, so I plan to work on these main aspects:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Clean up the code and the documentation (this file is an example), improve the design of the error and loading pages
+- Use React "advanced" tools to improve the code: defaultProps, propTypes, fragments, HOCs, context, routers, error boundaries...
+- Call to the API using Redux built-in applyMiddleWare method
+- Add basic tests with Jest, and perhaps with Enzyme
 
-### `npm test`
+The main purpose is still to learn and to put what I learned to practice.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installing
 
-### `npm run build`
+This project uses react, redux, react-redux and [fortawesome modules](https://fontawesome.com/how-to-use/on-the-web/using-with/react).
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to play around with it, clone it into a new repo:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+git clone https://github.com/luismartinezs/studio-ghibli-books.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And then just run `npm install` on the cloned repo.
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Run `npm run build` to generate a production build.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you want to deploy the repo to github, you can follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Create new repo in github
+2. Create react app project, and initiatie git local repo: git init, git add ., git commit -m "first commit"
+3. Set github repo as your remote repo: git remote origin https://github.com/user/repository.git
+4. Make changes to the local repo
+5. npm run build
+6. Paste `"homepage": "http://username.github.io/myapp"` in package.json, after "private" (change the url)
+7. Add this to package.json after eject key
+```
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+```
+8. Run: npm install --save-dev gh-pages
+9. Run: npm run deploy
+10. In git-hub > repo > settings, under the heading GitHub Pages / source, select gh-pages branch, and save
+11. Try the link provided, if it doesn't work, select another branch, save, select again gh-pages, save. Reload page. It may take a few seconds/minutes for the web to show up.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Built with
 
-## Learn More
+- HTML and CSS
+- JavaScript ES6
+- [React 16.6.3](https://reactjs.org/)
+- [Redux](https://redux.js.org/) - State management framework for JS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Luis Martínez - https://luismartinezs.github.io/
+
+## Misc
+
+- The Ghibli API was provided by a class exercise that involved creating this ecommerce. I do love Ghibli movies though :)
+- For the design I tried to go mobile first, and took inspiration on this website: https://www.monogranofelicetti.it/en/, to choose the colors I used this resource https://material.io/tools/color
