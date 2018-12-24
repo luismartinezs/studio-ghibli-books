@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider, connect } from "react-redux";
-import thunk from 'redux-thunk';
+import thunk from "redux-thunk";
 import PresentationalWrapper from "../view/presentationalWrapper";
 import { makeMovies } from "../model/movie";
 
@@ -123,6 +123,7 @@ const removeFromCart = index => {
   };
 };
 
+// requestData and receiveData are used by fetchData, thus they are not directly passed to React as props
 const requestData = () => {
   return { type: REQUEST_DATA };
 };
@@ -146,72 +147,53 @@ const fetchData = url => dispatch => {
 
 // reducer
 const reducer = (state = initialState, action) => {
-  let newState = {};
   let prevScreen = state.currentScreen;
 
   switch (action.type) {
     case SHOW_HOME:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentScreen: action.currentScreen,
         prevScreen: prevScreen
       });
-      return newState;
     case SHOW_DETAIL:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentScreen: action.currentScreen,
         prevScreen: prevScreen
       });
-      return newState;
     case SHOW_CART:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentScreen: action.currentScreen,
         prevScreen: prevScreen
       });
-      return newState;
     case SHOW_MOBILE_MENU:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentScreen: action.currentScreen,
         prevScreen: prevScreen
       });
-      return newState;
     case SHOW_ERROR:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentScreen: action.currentScreen,
         prevScreen: prevScreen
       });
-      return newState;
     case CLOSE_MENU:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentScreen: state.prevScreen,
         prevScreen: prevScreen
       });
-      return newState;
-    case GET_MOVIES:
-      newState = Object.assign({}, state, { movies: action.movies });
-      return newState;
-    case DID_LOAD:
-      newState = Object.assign({}, state, {
-        isLoading: action.isLoading,
-        currentScreen: screens.HOME
-      });
-      return newState;
     case SET_INDEX:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         currentDetailIndex: action.currentDetailIndex
       });
-      return newState;
     case ADD_TO_CART:
-      newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         cart: [...state.cart, action.index]
       });
-      return newState;
     case REMOVE_FROM_CART:
       const itemIndex = state.cart.indexOf(action.index);
       const newCart = state.cart
         .slice(0, itemIndex)
         .concat(state.cart.slice(itemIndex + 1));
-      newState = Object.assign({}, state, { cart: newCart });
-      return newState;
+      return Object.assign({}, state, { cart: newCart });
     case REQUEST_DATA:
       return Object.assign({}, state, { isLoading: true });
     case RECEIVE_DATA:
@@ -225,12 +207,14 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const middleware = [ thunk ];
+// when using more than one store enhancer, these must be composed since createStore takes 2 arguments
+// read more: https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup
+const middleware = [thunk];
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   reducer,
-  composeEnhancer(applyMiddleware(...middleware)),
+  composeEnhancer(applyMiddleware(...middleware))
 );
 
 // REACT
