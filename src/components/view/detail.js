@@ -52,7 +52,7 @@ class DetailArea extends Component {
           </div>
         </div>
         <div className="price__wrapper">
-          <span className="price">€19.90</span>
+          <span className="price">{props.movies[props.currentDetailIndex].retailPrice}</span>
         </div>
         <div>
           <button

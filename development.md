@@ -74,8 +74,8 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
   - import img src instead of adding the relative path // not sure how to do this, I'm using "require" DONE
   - remove all the default create-react-app files and readmes DONE
   - write own readme DONE
-  - Do the async call with Redux.applyMiddleWare
-  - Pass the price with the data instead of generating it in the component
+  - Do the async call with Redux.applyMiddleWare DONE
+  - Pass the price with the data instead of generating it in the component DONE
   - Use defaultProps for each component
   - Use propTypes for each component
   - Use fragments instead of divs to group elements
@@ -99,3 +99,4 @@ Maybe:
 - Separate search bar and logo into different components so that I don't need to always have one with the other
 - in popular section show movies ordered by rating
 - Add propTypes method to each stateless functional component that defines what the prop types must be
+- By clicking the "see more" button, it should be possible to list more movies

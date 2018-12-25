@@ -1,7 +1,7 @@
 /* GLOBAL STYLES AND VARIABLE DEFINITIONS */
 
 :root {
-    --font-h: "Merriweather", serif;
+    --font-h: "Raleway", sans-serif;
     --font-p: "Open Sans", sans-serif;
     --primary: #0dad62;
     --primary-light: #61c797;
@@ -37,6 +37,16 @@ h4,
 h5,
 h6 {
     font-family: var(--font-h);
+    font-weight: 400;
+    
+}
+
+h1 {
+    font-size: 1.85714em;
+}
+
+h2 {
+    font-size: 1.75714em;
 }
 
 p,

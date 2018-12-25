@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import calcPrice from "../model/calcPrice";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -7,15 +8,28 @@ library.add(faTrashAlt);
 class CartContainer extends Component {
   render() {
     const { props } = this.props;
+    const { movies } = props;
 
+    // taxes fraction is a parameter. It should probably be in a separate file "parameters" or "settings" as TAXES_FRACTION = 0.21
     const price = {
-      unitPrice: (19.9).toFixed(2),
-      currency: "€",
-      taxes: 0.21
+      taxesFraction: 0.21,
+      subtotal: 0,
+      totalPrice: 0,
+      currency: "€"
     };
 
-    price.subtotal = (price.unitPrice * props.cart.length).toFixed(2);
-    price.totalPrice = (price.subtotal * (1 + price.taxes)).toFixed(2);
+    for (let i of props.cart) {
+      let { unitPrice, currency } = calcPrice(movies[i].retailPrice);
+
+      price.subtotal = price.subtotal + +unitPrice;
+
+      if (i !== 0 && currency !== price.currency)
+        console.error("Please provide all prices in the same currency!!");
+      price.currency = currency;
+    }
+
+    price.subtotal = price.subtotal.toFixed(2);
+    price.totalPrice = (price.subtotal * (1 + price.taxesFraction)).toFixed(2);
 
     return <Cart props={props} price={price} />;
   }
@@ -106,7 +120,7 @@ const CartPrice = ({ price }) => (
       <li className="d-flex">
         <span className="cart-total__box first-col">Taxes:</span>
         <span className="cart-total__box last-col">
-          {(price.taxes * price.subtotal).toFixed(2) + price.currency}
+          {(price.taxesFraction * price.subtotal).toFixed(2) + price.currency}
         </span>
       </li>
 
@@ -180,7 +194,7 @@ class CartItem extends Component {
 // Since the layout for the cart items in mobile and desktop versions is quite different, I created two different versions for these (CartItemMobile and CartItemDesktop). The logic (hiding / showing the appropriate html) for this part (and any other viewport-size dependent properties) is handled by CSS
 class CartItemMobile extends Component {
   render() {
-    const { props, price, index } = this.props;
+    const { props, index } = this.props;
     const movie = props.movies[index];
 
     return (
@@ -207,7 +221,7 @@ class CartItemMobile extends Component {
           </div>
 
           <div>
-            <span>{price.unitPrice + price.currency}</span>
+            <span>{movie.retailPrice}</span>
           </div>
         </div>
       </li>
@@ -218,7 +232,6 @@ class CartItemMobile extends Component {
 class CartItemDesktop extends Component {
   render() {
     const { props } = this.props;
-    const price = this.props.price;
     const index = this.props.index;
     const movie = props.movies[index];
 
@@ -249,7 +262,7 @@ class CartItemDesktop extends Component {
           </div>
 
           <div className="cart-item__total">
-            <span>{price.unitPrice + price.currency}</span>
+            <span>{movie.retailPrice}</span>
           </div>
         </div>
       </li>
