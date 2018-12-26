@@ -23,18 +23,16 @@ section.featured {
 
 .featured__box-container {
   color: white;
-}
-
-.featured__box-container h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.featured__box-container span {
-  display: block;
-  font-size: 2rem;
-  font-family: $font-h;
-  margin-bottom: 2rem;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  span {
+    display: block;
+    font-size: 2rem;
+    font-family: $font-h;
+    margin-bottom: 2rem;
+  }
 }
 
 .buy-now-button {
@@ -50,61 +48,65 @@ section.featured {
   background-color: $secondary-dark;
 }
 
-@media (max-width: 960px) {
+@media (max-width: #{$large-width}) {
   section.featured {
-      height: 400px;
+    height: 400px;
   }
   .featured__container {
-      margin: 10vw;
+    margin: 10vw;
   }
   .featured__book-wrapper {
-      margin-right: 2rem;
+    margin-right: 2rem;
   }
   .featured__book-thumbnail {
-      height: 250px;
+    height: 250px;
   }
-  .featured__box-container h1 {
+  .featured__box-container {
+    h1 {
       font-size: 2rem;
-  }
-  .featured__box-container span {
+    }
+    span {
       font-size: 1.3rem;
       margin-bottom: 1rem;
+    }
   }
   .buy-now-button {
-      font-size: 1.7rem;
-      padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    font-size: 1.7rem;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: #{$medium-width}) {
   section.featured {
-      height: 600px;
+    height: 600px;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: #{$small-width}) {
   section.featured {
-      height: 500px;
+    height: 500px;
   }
   .featured__container {
-      margin: 10vw;
+    margin: 10vw;
   }
   .featured__book-wrapper {
-      margin-right: 2rem;
+    margin-right: 2rem;
   }
   .featured__book-thumbnail {
-      height: 200px;
+    height: 200px;
   }
-  .featured__box-container h1 {
+  .featured__box-container {
+    h1 {
       font-size: 2rem;
-  }
-  .featured__box-container span {
+    }
+    span {
       font-size: 1rem;
       margin-bottom: 1rem;
+    }
   }
   .buy-now-button {
-      font-size: 1.5rem;
-      padding: 0.5rem 1rem 0.5rem 1rem;
-      border: 2px solid transparent;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 2px solid transparent;
   }
 }

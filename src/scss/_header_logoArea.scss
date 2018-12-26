@@ -16,7 +16,6 @@
   background-color: transparent;
   height: 3rem;
   text-decoration: none;
-  color: black;
   z-index: 1;
 }
 
@@ -31,10 +30,9 @@
   font-family: $font-h;
   text-align: center;
   color: white;
-}
-
-.tagline strong {
-  font-size: 1.2rem;
+  strong {
+    font-size: 1.2rem;
+  }
 }
 
 .search__input {
@@ -56,7 +54,7 @@
   color: white;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: #{$medium-width}) {
   .logo-area__container {
     flex-direction: column;
     margin: 1rem 0.8rem 0.8rem 0.8rem;

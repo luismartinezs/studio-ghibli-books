@@ -41,7 +41,7 @@ span.top-bar__buttons button:hover {
   display: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: #{$medium-width}) {
   .top-bar {
     background-color: transparent;
     position: absolute;

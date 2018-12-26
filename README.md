@@ -21,7 +21,7 @@ The main purpose is still to learn and to put what I learned to practice.
 
 This project uses react, redux, react-redux and [fortawesome modules](https://fontawesome.com/how-to-use/on-the-web/using-with/react).
 
-If you want to play around with it, clone it into a new repo:
+If you want to play around with it, clone it locally into a new repo:
 
 ```
 git clone https://github.com/luismartinezs/studio-ghibli-books.git

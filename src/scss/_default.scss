@@ -47,13 +47,19 @@ a {
   cursor: pointer;
 }
 
-.btn-primary {
+.btn {
   font-size: 1.5rem;
   border-radius: 3px;
   text-transform: uppercase;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  
+  cursor: pointer;
+}
+
+.btn-primary {
+  @extend .btn;
   background-color: $secondary;
   color: white;
-  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   border: 2px solid $secondary;
 }
 
@@ -63,12 +69,9 @@ a {
 }
 
 .btn-secondary {
-  font-size: 1.5rem;
-  border-radius: 3px;
-  text-transform: uppercase;
+  @extend .btn;
   background-color: transparent;
   color: $soft-black;
-  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   border: 2px solid $secondary;
 }
 

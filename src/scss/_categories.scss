@@ -15,6 +15,9 @@
 .categories-list-item {
   width: 180px;
   margin: 0 1rem 0 1rem;
+  h3 {
+    margin-top: 2rem;
+  }
 }
 
 .categories-list-item:hover {
@@ -25,11 +28,7 @@
   margin-bottom: 3rem;
 }
 
-.categories-list-item h3 {
-  margin-top: 2rem;
-}
-
-@media screen and (max-width: 540px) {
+@media screen and (max-width: #{$small-width}) {
   .categories__list {
     flex-direction: column;
   }

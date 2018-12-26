@@ -32,7 +32,7 @@
   max-width: 30rem;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: #{$medium-width}) {
   .newsletter__container {
       margin: 2rem 1rem 3rem 1rem;
   }

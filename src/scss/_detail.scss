@@ -25,7 +25,7 @@
 }
 
 .key {
-  color: rgb(134, 134, 134);
+  color: $soft-black;
 }
 
 .price__wrapper {
@@ -52,7 +52,7 @@
   background-color: $secondary-dark;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: #{$large-width}) {
   .detail__container {
     flex-direction: row;
     align-items: flex-start;

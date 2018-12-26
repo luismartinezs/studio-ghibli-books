@@ -124,13 +124,22 @@ class Categories extends Component {
 }
 
 class Newsletter extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <section className="d-flex justify-center align-center w100 newsletter">
         <div className="d-flex d-col justify-center align-center newsletter__container">
           <h2>Subscribe</h2>
 
-          <form className="newsletter__form">
+          <form className="newsletter__form" onSubmit={this.handleSubmit}>
             <input
               className="newsletter__input"
               type="text"

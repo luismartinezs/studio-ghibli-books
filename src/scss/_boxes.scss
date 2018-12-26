@@ -15,23 +15,20 @@
 .boxes-list-item {
   margin: 0 0 1rem 0;
   max-width: 200px;
+  p {
+    margin: 0.2rem;
+  }
+  img {
+    max-height: 200px;
+    max-width: 200px;
+  }
+  img:hover {
+    cursor: pointer;
+  }
 }
 
 .boxes-list-item:not(:last-child) {
   margin-right: 1rem;
-}
-
-.boxes-list-item p {
-  margin: 0.2rem;
-}
-
-.boxes-list-item img {
-  max-height: 200px;
-  max-width: 200px;
-}
-
-.boxes-list-item img:hover {
-  cursor: pointer;
 }
 
 .see-more-button {
@@ -48,32 +45,32 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: #{$medium-width}) {
   .boxes-list-item {
-      max-width: 300px;
-  }
-  .boxes-list-item:not(:last-child) {
-      margin-bottom: 5rem;
-  }
-  .boxes-list-item img {
+    max-width: 300px;
+    img {
       max-height: 500px;
       max-width: 500px;
       width: auto;
       height: 250px;
+    }
+  }
+  .boxes-list-item:not(:last-child) {
+    margin-bottom: 5rem;
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: #{$small-width}) {
   .boxes-list-item {
-      width: 100%;
-      height: auto;
-  }
-  .boxes-list-item:not(:last-child) {
-      margin-bottom: 5rem;
-  }
-  .boxes-list-item img {
+    width: 100%;
+    height: auto;
+    img {
       width: 100%;
       display: block;
       height: auto;
+    }
+  }
+  .boxes-list-item:not(:last-child) {
+    margin-bottom: 5rem;
   }
 }
