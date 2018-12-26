@@ -1,0 +1,42 @@
+.mobile-menu__wrapper {
+  background-color: $primary-xlight;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.mobile-menu__close-button {
+  background-color: transparent;
+  color: $primary-dark;
+  font-size: 2rem;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.mobile-menu-list__wrapper {
+  margin-top: 2rem;
+}
+
+.mobile-menu-list {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu-list li {
+  padding: 0 0 0.8rem 0;
+  margin: 0 0 0.8rem 0;
+  width: 100%;
+  border-bottom: 1px solid $primary-light;
+}
+
+.mobile-menu-list li button {
+  text-transform: uppercase;
+}
+
+.mobile-menu-list__account-button {
+  text-transform: capitalize !important;
+  font-weight: bold;
+  font-size: 0.9rem;
+}

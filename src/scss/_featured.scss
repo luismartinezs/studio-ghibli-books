@@ -1,0 +1,110 @@
+section.featured {
+  width: 100%;
+  height: 500px;
+  background-image: url("./images/totoro-fields.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.featured__container {
+  margin: 20vw;
+}
+
+.featured__book-wrapper {
+  margin-right: 3rem;
+}
+
+.featured__book-thumbnail {
+  height: 300px;
+  width: auto;
+  box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.5), 1rem 1rem 1rem rgba(0, 0, 0, 0.8);
+}
+
+.featured__box-container {
+  color: white;
+}
+
+.featured__box-container h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured__box-container span {
+  display: block;
+  font-size: 2rem;
+  font-family: $font-h;
+  margin-bottom: 2rem;
+}
+
+.buy-now-button {
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-color: $secondary;
+  color: white;
+  cursor: pointer;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.buy-now-button:hover {
+  background-color: $secondary-dark;
+}
+
+@media (max-width: 960px) {
+  section.featured {
+      height: 400px;
+  }
+  .featured__container {
+      margin: 10vw;
+  }
+  .featured__book-wrapper {
+      margin-right: 2rem;
+  }
+  .featured__book-thumbnail {
+      height: 250px;
+  }
+  .featured__box-container h1 {
+      font-size: 2rem;
+  }
+  .featured__box-container span {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+  }
+  .buy-now-button {
+      font-size: 1.7rem;
+      padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  section.featured {
+      height: 600px;
+  }
+}
+
+@media (max-width: 540px) {
+  section.featured {
+      height: 500px;
+  }
+  .featured__container {
+      margin: 10vw;
+  }
+  .featured__book-wrapper {
+      margin-right: 2rem;
+  }
+  .featured__book-thumbnail {
+      height: 200px;
+  }
+  .featured__box-container h1 {
+      font-size: 2rem;
+  }
+  .featured__box-container span {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+  }
+  .buy-now-button {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      border: 2px solid transparent;
+  }
+}

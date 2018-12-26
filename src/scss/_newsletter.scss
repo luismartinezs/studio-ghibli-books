@@ -1,0 +1,49 @@
+.newsletter {
+  background-color: $secondary-xlight;
+}
+
+.newsletter__container {
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+.newsletter__input {
+  height: 2rem;
+  min-width: 150px;
+  width: 50vw;
+  margin-right: 0.5rem;
+}
+
+.submit-button {
+  height: 2.4rem;
+  width: 4.5rem;
+  background-color: $secondary;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.submit-button:hover {
+  background-color: $secondary-dark;
+  color: white;
+  cursor: pointer;
+}
+
+.no-spam-message {
+  font-size: 0.7rem;
+  max-width: 30rem;
+}
+
+@media screen and (max-width: 720px) {
+  .newsletter__container {
+      margin: 2rem 1rem 3rem 1rem;
+  }
+  .newsletter__form {
+      width: 100%;
+  }
+  .newsletter__input {
+      width: 99%;
+      margin-bottom: 0.3rem;
+  }
+  .submit-button {
+      width: 100%;
+  }
+}

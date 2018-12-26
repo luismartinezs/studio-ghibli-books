@@ -1,0 +1,116 @@
+.d-flex {
+  display: flex;
+}
+
+.d-col {
+  flex-direction: column;
+}
+
+.d-row {
+  flex-direction: row;
+}
+
+.d-block {
+  display: block;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.justify-self-start {
+  justify-self: flex-start;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.vw100 {
+  width: 100vw;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* use with a div child of the element that needs the mask */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  cursor: pointer;
+}
+
+/* 
+Give an element the class mobile to show it only on small screens, give an element the class desktop to show it only on large screens
+
+Don't use both classes in the same element
+*/
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: default;
+}
+
+@media screen and (min-width: 960px) {
+  .desktop {
+    display: initial;
+  }
+  .mobile {
+    display: none;
+  }
+}
+
+/* buttons with this class are displayed like anchors */
+
+.anchor-btn {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}

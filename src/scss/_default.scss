@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: $text-primary;
+  font-family: $font-p;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-h;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.85714em;
+}
+
+h2 {
+  font-size: 1.75714em;
+}
+
+p,
+span {
+  font-family: $font-p;
+}
+
+button {
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+.btn-primary {
+  font-size: 1.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  background-color: $secondary;
+  color: white;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border: 2px solid $secondary;
+}
+
+.btn-primary:hover {
+  background-color: $secondary-dark;
+  border: 2px solid $secondary-dark;
+}
+
+.btn-secondary {
+  font-size: 1.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: $soft-black;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border: 2px solid $secondary;
+}
+
+.btn-secondary:hover {
+  background-color: $secondary-dark;
+  color: white;
+  border: 2px solid $secondary-dark;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}

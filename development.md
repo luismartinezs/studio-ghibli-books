@@ -76,22 +76,33 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
   - write own readme DONE
   - Do the async call with Redux.applyMiddleWare DONE
   - Pass the price with the data instead of generating it in the component DONE
-  - Use defaultProps for each component
-  - Use propTypes for each component
-  - Use fragments instead of divs to group elements
-  - Redesign loading page
-  - Redesign error page
+
+  * test that components render with Jest-react
+
   - Use scss partials to import styles for each part, on separate files, into one file
   - Add styles with scss, @each loop to generate themes
-  - Use error boundaries for showing the load and error screens
-  - Use Routing for the different pages (may not work in github though)
-  - Use component composition to prevent passing props down the componment tree
-  - Using context: allow user to select style
-    - User can select style from interface
+
+  - Use fragments instead of divs to group elements
+
   - If any common functionality across components, compose it in HOCs
-  - somewhere there should be a modal or a tooltip created with portals
-  - test that components render with Jest-react
-  - test with Enzyme
+
+  - Redesign loading page >> add animation
+  - Redesign error page
+
+  * Use Routing for the different pages (may not work in github though)
+
+  - Use component composition to prevent passing props down the componment tree
+
+  - Use defaultProps for each component
+  - Use propTypes for each component
+
+  * Use error boundaries for showing the load and error screens
+
+  * Using context: allow user to select style
+    - User can select style from interface
+  * somewhere there should be a modal or a tooltip created with portals
+
+  * test with Enzyme
 
 Maybe:
 

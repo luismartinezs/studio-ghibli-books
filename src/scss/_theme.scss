@@ -1,0 +1,21 @@
+$font-h: "Raleway",
+sans-serif;
+$font-p: "Open Sans",
+sans-serif;
+$hue-primary: 151.9;
+$hue-secondary: 19.4;
+$primary: hsl($hue-primary, 86%, 36.5%);
+$primary-light: hsl($hue-primary, 47.7%, 58%);
+$primary-xlight: hsl($hue-primary, 51.7%, 82.9%);
+$primary-dark: hsl($hue-primary, 97.8%, 17.5%);
+$secondary: hsl($hue-secondary, 100%, 48%);
+$secondary-light: hsl($hue-secondary, 100%, 69.6%);
+$secondary-xlight: hsl($hue-secondary, 100%, 89.8%);
+$secondary-dark: hsl($hue-secondary, 100%, 24.5%);
+$text-primary: #0e0e0e;
+$text-secondary: #0e0e0e;
+$alert: #e35c5c;
+$small-width: 540px;
+$medium-width: 720px;
+$large-width: 960px;
+$soft-black: #5c5c5c;

@@ -1,0 +1,84 @@
+.logo-area {
+  background-color: $primary;
+  width: 100%;
+}
+
+.logo-area__container {
+  width: 100%;
+  margin: 1rem 0.8rem 1.5rem 0.8rem;
+}
+
+.logo__container {
+  margin-right: 10vw;
+}
+
+.logo__anchor {
+  background-color: transparent;
+  height: 3rem;
+  text-decoration: none;
+  color: black;
+  z-index: 1;
+}
+
+.logo__main {
+  max-width: 100%;
+  height: auto;
+  width: 30px;
+  margin-right: 0.5rem;
+}
+
+.tagline {
+  font-family: $font-h;
+  text-align: center;
+  color: white;
+}
+
+.tagline strong {
+  font-size: 1.2rem;
+}
+
+.search__input {
+  height: 2rem;
+  min-width: 160px;
+  width: 50vw;
+  margin-right: 0.5rem;
+}
+
+.search__button {
+  height: 2.4rem;
+  width: 2.4rem;
+  background-color: $secondary;
+  color: white;
+}
+
+.search__button:hover {
+  background-color: $secondary-dark;
+  color: white;
+}
+
+@media screen and (max-width: 720px) {
+  .logo-area__container {
+    flex-direction: column;
+    margin: 1rem 0.8rem 0.8rem 0.8rem;
+  }
+  .logo__main {
+    width: 30px;
+  }
+  .logo__anchor {
+    align-self: start;
+    width: auto;
+    margin-bottom: 2rem;
+  }
+  .search__bar {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .search__input {
+    width: 99%;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+  .search__button {
+    width: 100%;
+  }
+}
