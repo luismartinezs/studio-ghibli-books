@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/studio-ghibli-books/static/js/runtime~main.bd1864c2.js"
   },
   {
-    "revision": "2093a5ebcc2531b49181",
-    "url": "/studio-ghibli-books/static/js/main.2093a5eb.chunk.js"
+    "revision": "440ed66fe7cd53a9fc75",
+    "url": "/studio-ghibli-books/static/js/main.440ed66f.chunk.js"
   },
   {
-    "revision": "c0d349eb24aad18b8f4d",
-    "url": "/studio-ghibli-books/static/js/1.c0d349eb.chunk.js"
+    "revision": "458ff98b51781d699566",
+    "url": "/studio-ghibli-books/static/js/1.458ff98b.chunk.js"
   },
   {
-    "revision": "2093a5ebcc2531b49181",
-    "url": "/studio-ghibli-books/static/css/main.7a359427.chunk.css"
+    "revision": "440ed66fe7cd53a9fc75",
+    "url": "/studio-ghibli-books/static/css/main.365e76f6.chunk.css"
   },
   {
-    "revision": "054cbc7514538d7b5cbb34e6b4297c6f",
+    "revision": "ce1eb09437ce1da3505b97e462e9409f",
     "url": "/studio-ghibli-books/index.html"
   }
 ];

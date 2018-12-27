@@ -1,15 +1,15 @@
 {
-  "main.css": "/studio-ghibli-books/static/css/main.7a359427.chunk.css",
-  "main.js": "/studio-ghibli-books/static/js/main.2093a5eb.chunk.js",
-  "main.js.map": "/studio-ghibli-books/static/js/main.2093a5eb.chunk.js.map",
-  "static/js/1.c0d349eb.chunk.js": "/studio-ghibli-books/static/js/1.c0d349eb.chunk.js",
-  "static/js/1.c0d349eb.chunk.js.map": "/studio-ghibli-books/static/js/1.c0d349eb.chunk.js.map",
+  "main.css": "/studio-ghibli-books/static/css/main.365e76f6.chunk.css",
+  "main.js": "/studio-ghibli-books/static/js/main.440ed66f.chunk.js",
+  "main.js.map": "/studio-ghibli-books/static/js/main.440ed66f.chunk.js.map",
+  "static/js/1.458ff98b.chunk.js": "/studio-ghibli-books/static/js/1.458ff98b.chunk.js",
+  "static/js/1.458ff98b.chunk.js.map": "/studio-ghibli-books/static/js/1.458ff98b.chunk.js.map",
   "runtime~main.js": "/studio-ghibli-books/static/js/runtime~main.bd1864c2.js",
   "runtime~main.js.map": "/studio-ghibli-books/static/js/runtime~main.bd1864c2.js.map",
-  "static/css/main.7a359427.chunk.css.map": "/studio-ghibli-books/static/css/main.7a359427.chunk.css.map",
+  "static/css/main.365e76f6.chunk.css.map": "/studio-ghibli-books/static/css/main.365e76f6.chunk.css.map",
   "static/media/book_cover_template.jpg": "/studio-ghibli-books/static/media/book_cover_template.183f7e2f.jpg",
   "static/media/styles.css": "/studio-ghibli-books/static/media/totoro-fields.2fd54a79.jpg",
   "index.html": "/studio-ghibli-books/index.html",
-  "precache-manifest.9ac16f5af10a2748cd83902780f6a005.js": "/studio-ghibli-books/precache-manifest.9ac16f5af10a2748cd83902780f6a005.js",
+  "precache-manifest.2a83c6217ae68bcfc04fea6d9ffbef16.js": "/studio-ghibli-books/precache-manifest.2a83c6217ae68bcfc04fea6d9ffbef16.js",
   "service-worker.js": "/studio-ghibli-books/service-worker.js"
 }
