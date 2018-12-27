@@ -194,6 +194,34 @@ Don't use both classes in the same element
   background-color: transparent;
 }
 
+.loading__background {
+  background-color: #bdead5;
+}
+.loading__background img {
+  width: 70px;
+  height: auto;
+  animation: loading-icon 3s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loading-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.error__background {
+  background-color: #bdead5;
+}
+.error__background iframe {
+  max-width: 95vw;
+}
+.error__background p {
+  margin: 0 0 0 0;
+}
+
 header {
   margin: 0;
   padding: 0;
@@ -303,7 +331,6 @@ span.top-bar__buttons button:hover {
   color: white;
 }
 .tagline strong {
-  font-family: "Montserrat", serif;
   font-size: 1.2rem;
 }
 
@@ -403,70 +430,6 @@ span.top-bar__buttons button:hover {
   .nav-link {
     margin: 0.5rem;
     font-size: 0.8rem;
-  }
-}
-/*  FOOTER */
-.footer__main-wrapper {
-  background-color: #0dad62;
-  color: white;
-}
-
-.footer__main-container {
-  margin: 1rem 1rem 2rem 4rem;
-  flex-wrap: wrap;
-  color: white;
-}
-
-.footer__main-container div {
-  min-width: 160px;
-}
-
-.footer__col {
-  width: 20%;
-}
-
-.footer__col:not(:last-child) {
-  margin-right: 1rem;
-}
-
-.footer__links-container ul li a,
-.footer__categories-container ul li a {
-  text-decoration: underline;
-}
-
-.footer__contact-container ul li a {
-  color: yellow;
-}
-
-.footer__social-media-icons a {
-  margin-right: 0.5rem;
-  font-size: 1rem;
-  color: white;
-}
-
-.bottom-bar__wrapper {
-  height: 2rem;
-  background-color: #01582f;
-  color: #7eb481;
-  font-size: 0.8rem;
-}
-
-.bottom-bar__container {
-  margin: 0.4rem 0 0.4rem 0;
-}
-
-@media screen and (max-width: 720px) {
-  .footer__main-container {
-    margin: 3rem 0 3rem 0;
-  }
-
-  .footer__categories-container {
-    display: none;
-  }
-}
-@media screen and (max-width: 540px) {
-  .footer__links-container {
-    display: none;
   }
 }
 .footer__main-wrapper {
@@ -602,7 +565,6 @@ section.featured {
   .featured__box-container h1 {
     font-size: 2rem;
   }
-
   .featured__box-container span {
     font-size: 1.3rem;
     margin-bottom: 1rem;
@@ -638,7 +600,6 @@ section.featured {
   .featured__box-container h1 {
     font-size: 2rem;
   }
-
   .featured__box-container span {
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -717,15 +678,14 @@ section.featured {
     width: 100%;
     height: auto;
   }
-
-  .boxes-list-item:not(:last-child) {
-    margin-bottom: 5rem;
-  }
-
   .boxes-list-item img {
     width: 100%;
     display: block;
     height: auto;
+  }
+
+  .boxes-list-item:not(:last-child) {
+    margin-bottom: 5rem;
   }
 }
 .categories {

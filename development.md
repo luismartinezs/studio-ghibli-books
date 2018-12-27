@@ -1,3 +1,5 @@
+Use this command to transpile SCSS into CSS: sass --watch src/scss/styles.scss src/components/view/styles-precompile.css
+
 API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
 
 - Create production branch
@@ -77,19 +79,19 @@ API: https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API
   - Do the async call with Redux.applyMiddleWare DONE
   - Pass the price with the data instead of generating it in the component DONE
 
-  * test that components render with Jest-react
-
-  - Use scss partials to import styles for each part, on separate files, into one file
+  - Use scss partials to import styles for each part, on separate files, into one file DONE
   - Add styles with scss, @each loop to generate themes
 
   - Use fragments instead of divs to group elements
 
+  * Use Routing for the different pages (may not work in github though)
+
+  * test that components render with Jest-react
+
   - If any common functionality across components, compose it in HOCs
 
-  - Redesign loading page >> add animation
-  - Redesign error page
-
-  * Use Routing for the different pages (may not work in github though)
+  - Redesign loading page >> add animation OK
+  - Redesign error page OK
 
   - Use component composition to prevent passing props down the componment tree
 

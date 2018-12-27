@@ -12,7 +12,7 @@ import "./styles.css";
 class PresentationalWrapper extends Component {
   render() {
     const { props } = this.props;
-    const { currentScreen } = props;
+    let { currentScreen } = props;
 
     if (currentScreen === "LOADING") {
       return <Loading />;

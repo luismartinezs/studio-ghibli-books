@@ -1,6 +1,10 @@
-@import "theme"; /* Variables, must always be the first import */
+@import "theme";
+/* Variables, must always be the first import */
+
 @import "default";
 @import "helper";
+@import "loading";
+@import "error";
 @import "header_topBar";
 @import "header_logoArea";
 @import "header_navBar";

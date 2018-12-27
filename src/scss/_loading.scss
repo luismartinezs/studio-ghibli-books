@@ -1,0 +1,18 @@
+.loading__background {
+  background-color: $primary-xlight;
+  img {
+    width: 70px;
+    height: auto;
+    animation: loading-icon 3s infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes loading-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
